@@ -27,7 +27,7 @@ const menuItems = [
 export default function HeaderSection() {
   return (
     <div className=" max-w-[1200px] ">
-      <nav className="flex justify-between pt-4 min-w-[500px] sm:min-w-[1200px] fixed">
+      <nav className="flex justify-between pt-4 min-w-[500px] sm:min-w-[1200px] fixed backdrop-blur-[2px]  pb-4">
         <Link href="/" className="text-white font-extrabold ">
           A<span className="text-red">sh</span>ley
         </Link>
