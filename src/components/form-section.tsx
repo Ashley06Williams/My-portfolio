@@ -1,7 +1,8 @@
 "use client";
 
-import React from "react";
-import { useForm } from "react-hook-form";
+import React, { useState } from "react";
+
+import Popup from "./popup";
 
 const contactInfo = [
   {
@@ -19,21 +20,14 @@ const contactInfo = [
 ];
 
 export default function FormPage() {
-  const {
-    register,
-    trigger,
-    formState: { errors },
-  } = useForm<{
-    name: string;
-    email: string;
-  }>();
+  const [modal, setModal] = useState(false);
+
+  const toggleModal = () => {
+    setModal(!modal);
+  };
+
   return (
-    <form
-      action={async (FormData) => {
-        const result = await trigger();
-        if (!result) return;
-      }}
-    >
+    <section>
       <div className="mt-40 flex items-center justify-center">
         <div className="flex flex-col w-1/3">
           <div className="w">
@@ -52,49 +46,15 @@ export default function FormPage() {
           ))}
         </div>
         <div className="w-2/3 ml-72 justify- mt-20">
-          <button className="bg-red text-white p-2 px-12 rounded-tr-xl rounded-bl-xl">
+          <button
+            onClick={toggleModal}
+            className="bg-red text-white p-2 px-12 rounded-tr-xl rounded-bl-xl"
+          >
             Message Me
           </button>
         </div>
       </div>
-    </form>
+      <Popup modal={modal} setModal={setModal} />
+    </section>
   );
-}
-
-{
-  /* 
-          <div className="w-2/3 ml-20 ">
-            <label htmlFor="email" className="ml-20 mr-2 text-white">
-              Email:
-            </label>
-            <input
-              className="border-2 border-white hover:border-black"
-              id="email"
-              {...register("email", {
-                required: "Email is required",
-                pattern: {
-                  value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
-                  message: "Invalid email address",
-                },
-              })}
-            />
-            {errors.email ? (
-              <p className="text-red">{errors.email.message}</p>
-            ) : null}
-
-            <label htmlFor="name" className="ml-20 mr-2 text-white">
-              Full name:
-            </label>
-            <input
-              className="border-2 border-white hover:border-black"
-              id="name"
-              {...register("name", {
-                required: "Name is required",
-              })}
-            />
-            {errors.name ? (
-              <p className="text-red">{errors.name.message}</p>
-            ) : null}
-            <button>Submit</button>
-          </div> */
 }
