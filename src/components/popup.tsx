@@ -26,23 +26,27 @@ export default function Popup({ modal, setModal }: PopupProps) {
         if (!result) return;
       }}
     >
-      <div className="fixed top-0 left-0 w-[100%] h-[100vh] bg-black bg-opacity-30 flex justify-center items-center">
+      <div className="fixed top-0 left-0 w-[100%] h-[100vh] bg-white bg-opacity-10 flex justify-center items-center">
         <div
-          className="relative p-[32px] w-[100%] max-w-[640px] bg-white bg-opacity-100 rounded-lg scroll-py-12 border border-blac
+          className="relative p-[32px] w-[100%] max-w-[640px] bg-[#181A29] rounded-lg scroll-py-12 
       "
         >
           <button
             onClick={toggleModal}
             className="absolute top-[16px] right-[16px] "
           >
-            x
+            <img src="/cancel-01-stroke-rounded.svg" className="p-4 mt-6 " />
           </button>
           <div className="flex flex-col">
-            <h2 className="text-3xl mb-4">Let's get in touch</h2>
-            <p className="font-light text-sm">Kindly fill out the form</p>
+            <h2 className="text-[45px] font-semibold mb-2 text-white">
+              Let's get in <span className="text-red">touch</span>
+            </h2>
+            <p className="font-light text-sm text-white">
+              Kindly fill out the form
+            </p>
             <div className="space-y-6 flex flex-col">
               <input
-                className="bg-blueGrey-light mt-4 p-2 rounded-md "
+                className="bg-[#2B2D41] mt-4 p-2 rounded-md "
                 placeholder="Your Email"
                 id="email"
                 {...register("email", {
@@ -59,7 +63,7 @@ export default function Popup({ modal, setModal }: PopupProps) {
 
               <input
                 placeholder="Your Name"
-                className="bg-blueGrey-light p-2 rounded-md"
+                className="bg-[#2B2D41] p-2 rounded-md"
                 id="name"
                 {...register("name", {
                   required: "Name is required",
@@ -70,14 +74,16 @@ export default function Popup({ modal, setModal }: PopupProps) {
               ) : null}
               <textarea
                 placeholder="Your Message"
-                className="bg-blueGrey-light p-2 h-48 rounded-md text-white font-medium"
+                className="bg-[#2B2D41] p-2 h-48 rounded-md text-white font-medium"
                 id="messsage"
                 {...register("message")}
               />
             </div>
-            <button className="bg-red w-36 rounded-lg p-2 text-white font-medium mt-10">
-              Submit
-            </button>
+            <div className="flex  justify-center">
+              <button className=" bg-red w-36 rounded-lg p-2 text-white font-medium mt-10">
+                Submit
+              </button>
+            </div>
           </div>
         </div>
       </div>
