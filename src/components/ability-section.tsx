@@ -2,7 +2,7 @@ import React from "react";
 
 const cardItems = [
   {
-    src: "/physics.png",
+    src: "/react-stroke-rounded.svg",
     title: "React",
     description: "lorem Ipsum",
     id: 1,
@@ -14,13 +14,13 @@ const cardItems = [
     id: 2,
   },
   {
-    src: "/physics.png",
+    src: "/java-script-stroke-rounded.svg",
     title: "JavaScript",
     description: "lorem Ipsum",
     id: 3,
   },
   {
-    src: "/physics.png",
+    src: "/java-stroke-rounded.svg",
     title: "Java",
     description: "lorem Ipsum",
     id: 4,
@@ -40,7 +40,7 @@ export default function AbilitySection() {
             key={cardItem.id}
             className="flex flex-col bg-blueGrey-light w-1/4 h-fit p-4 pt-14 mb-6 shadow-md "
           >
-            <img src="/physics.png" className="w-8" />
+            <img src={cardItem.src} className="w-8" />
             <h3 className="text-white font-semibold text-[16px] mt-6 mb-4">
               {cardItem.title}
             </h3>
