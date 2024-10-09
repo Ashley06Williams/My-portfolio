@@ -27,7 +27,7 @@ export default function FormPage() {
   };
 
   return (
-    <section>
+    <section id="contact">
       <div className="mt-40 flex items-center justify-center">
         <div className="flex flex-col w-1/3">
           <div className="w">

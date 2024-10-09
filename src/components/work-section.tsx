@@ -25,36 +25,38 @@ const workItem = [
 
 export default function WorkSection() {
   return (
-    <div className="mt-20">
-      <h3 className="text-white text-[16px] ">Take a look at</h3>
-      <h1 className="font-semibold text-[60px] text-white -mt-2 mb-4">
-        <span className="text-red">My</span> Work
-      </h1>
-      <CardContainer>
-        {workItem.map((item) => (
-          <div
-            key={item.id}
-            className=" bg-blueGrey-light w-1/4 h-fit p-4 pt-14 mb-6 shadow-md items-center "
-          >
-            <div className="flex flex-col items-center">
-              <img src={item.imgSrc} className="w-60 -mt-6" />
-            </div>
-            <div className="px-4 ">
-              <h3 className="text-white font-semibold text-[18px] mt-6 mb-4 ">
-                {item.title}
-              </h3>
-              <Link
-                href={item.workLink}
-                className="text-red hover:text-blue-500 hover:underline"
-              >
-                View Project
-              </Link>
-            </div>
+    <section id="work" className="h-1/2 ">
+      <div className="mt-40 ">
+        <h3 className="text-white text-[16px] ">Take a look at</h3>
+        <h1 className="font-semibold text-[60px] text-white -mt-2 mb-4">
+          <span className="text-red">My</span> Work
+        </h1>
+        <CardContainer>
+          {workItem.map((item) => (
+            <div
+              key={item.id}
+              className=" bg-blueGrey-light w-1/4 h-fit p-4 pt-14 mb-6 shadow-md items-center "
+            >
+              <div className="flex flex-col items-center">
+                <img src={item.imgSrc} className="w-60 -mt-6" />
+              </div>
+              <div className="px-4 ">
+                <h3 className="text-white font-semibold text-[18px] mt-6 mb-4 ">
+                  {item.title}
+                </h3>
+                <Link
+                  href={item.workLink}
+                  className="text-red hover:text-blue-500 hover:underline"
+                >
+                  View Project
+                </Link>
+              </div>
 
-            <div className="flex flex-col"></div>
-          </div>
-        ))}
-      </CardContainer>
-    </div>
+              <div className="flex flex-col"></div>
+            </div>
+          ))}
+        </CardContainer>
+      </div>
+    </section>
   );
 }
