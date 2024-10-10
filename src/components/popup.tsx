@@ -1,14 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-
+import { Resend } from "resend";
+import { POST } from "./email";
 type PopupProps = {
   modal: boolean;
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
+const RESEND_API_KEY = "re_RzoTnP74_7EFdrYNyYmrEAboKqWKvgQgA";
+
 export default function Popup({ modal, setModal }: PopupProps) {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
   const toggleModal = () => setModal(!modal);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    POST();
+
+    console.log(name, email, message);
+  };
   const {
     register,
     trigger,
@@ -56,6 +69,7 @@ export default function Popup({ modal, setModal }: PopupProps) {
                     message: "Invalid email address",
                   },
                 })}
+                onChange={(e) => setEmail(e.target.value)}
               />
               {errors.email ? (
                 <p className="text-red">{errors.email.message}</p>
@@ -68,19 +82,25 @@ export default function Popup({ modal, setModal }: PopupProps) {
                 {...register("name", {
                   required: "Name is required",
                 })}
+                onChange={(e) => setName(e.target.value)}
               />
               {errors.name ? (
                 <p className="text-red">{errors.name.message}</p>
               ) : null}
+
               <textarea
                 placeholder="Your Message"
                 className="bg-[#2B2D41] p-2 h-48 rounded-md text-white font-medium"
                 id="messsage"
                 {...register("message")}
+                onChange={(e) => setMessage(e.target.value)}
               />
             </div>
             <div className="flex  justify-center">
-              <button className=" bg-red w-36 rounded-lg p-2 text-white font-medium mt-10">
+              <button
+                onClick={handleSubmit}
+                className=" bg-red w-36 rounded-lg p-2 text-white font-medium mt-10"
+              >
                 Submit
               </button>
             </div>
