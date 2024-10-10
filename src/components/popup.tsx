@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Resend } from "resend";
-import { POST } from "./email";
+
 type PopupProps = {
   modal: boolean;
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
 };
-
-const RESEND_API_KEY = "re_RzoTnP74_7EFdrYNyYmrEAboKqWKvgQgA";
 
 export default function Popup({ modal, setModal }: PopupProps) {
   const [name, setName] = useState("");
