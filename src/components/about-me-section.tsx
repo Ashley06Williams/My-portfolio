@@ -16,14 +16,20 @@ export default function AboutMe() {
           </div>
           <div>
             <p className="text-white">
-              Jianbing kogi hot chicken migas, pinterest taiyaki knausgaard
-              ascot bicycle rights. Chia dreamcatcher small batch, cray
-              chicharrones fixie mumblecore butcher meditation mukbang beard
-              plaid tote bag listicle. Thundercats fam asymmetrical af blue
-              bottle, fixie unicorn tote bag. Bruh actually hoodie, fanny pack
-              af williamsburg organic crucifix. Humblebrag fit tonx semiotics
-              synth. Beard sriracha meggings jean shorts, praxis hella everyday
-              carry.
+              In 2022, I started learning Java at school. At first, it was a
+              quite challenging but that made it interesting, I made a habit of
+              dedicating about an hour each day to practicing and reminded
+              myself nothing new comes easy.I built a passion for programming
+              and a drive for that feeling of solving problems I've been stuck
+              on for hours whichcarried me through and opened the door to web
+              development. I kicked things off with a course in JavaScript and
+              as it goes moved on to React and currenlty exploring nextJS as
+              well as any upcoming technologies. As a self-taught developer, I
+              may not come with formal university qualifications, but I bring a
+              deep motivation to continuously learn and improve. Every day, I
+              focus on building my skills, growing as a developer, and laying
+              the best foundation for a successful career, I realise tech
+              changes fast and I am always open to learning.
             </p>
           </div>
         </div>
