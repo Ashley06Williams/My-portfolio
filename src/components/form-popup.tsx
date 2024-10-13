@@ -66,6 +66,13 @@ export default function Popup({ modal, setModal }: PopupProps) {
     message: string;
   }>();
 
+  // TODO:
+  // - Add a success message above Submit button
+  // - Clear out form inputs on success | do you need a success/error state?
+  // - If error then show error message (format this for a user. don't just output the error message) above Submit button
+  // - Do you want to close the modal on success? Think about using a delay for this
+  // - Check input validations and look into validating on the server side
+
   return modal ? (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="fixed top-0 left-0 w-[100%] h-[100vh] bg-white bg-opacity-10 flex justify-center items-center ">
@@ -92,6 +99,7 @@ export default function Popup({ modal, setModal }: PopupProps) {
                 className="bg-[#2B2D41] mt-4 p-2 rounded-md "
                 placeholder="Your Email"
                 id="email"
+                required
                 {...register("email", {
                   required: "Email is required",
 
@@ -121,7 +129,7 @@ export default function Popup({ modal, setModal }: PopupProps) {
 
               <textarea
                 placeholder="Your Message"
-                className="bg-[#2B2D41] p-2 h-48 rounded-md text-white font-medium"
+                className="bg-[#2B2D41] p-2 h-48 rounded-md font-medium"
                 id="messsage"
                 {...register("message")}
                 onChange={(e) => setMessage(e.target.value)}

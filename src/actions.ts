@@ -6,7 +6,7 @@ type State = {
   error: string | null;
   success: boolean;
 };
-export const sendEmail = async (prevState: State, formData: FormData) => {
+export const sendEmail = async (formData: FormData) => {
   const name = formData.get("name") as string;
   const email = formData.get("email") as string;
   const message = formData.get("message") as string;
