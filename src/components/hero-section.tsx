@@ -1,6 +1,5 @@
 "use client";
 
-import { once } from "events";
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
 
