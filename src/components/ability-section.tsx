@@ -8,7 +8,7 @@ const cardItems = [
     id: 1,
   },
   {
-    src: "/physics.png",
+    src: "/nextJsIcon.svg",
     title: "NextJs",
     description: "lorem Ipsum",
     id: 2,
