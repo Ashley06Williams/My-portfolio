@@ -1,5 +1,8 @@
+'use client'
+
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import sendEmail from "@/actions";
 
 type PopupProps = {
   modal: boolean;
@@ -7,15 +10,25 @@ type PopupProps = {
 };
 
 export default function Popup({ modal, setModal }: PopupProps) {
+  
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const toggleModal = () => setModal(!modal);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e:any) => {
     e.preventDefault();
-    POST();
+
+    try {
+      setLoading(true);
+      const response = await sendEmail(name, email, message);
+
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+    }
 
     console.log(name, email, message);
   };
@@ -28,6 +41,13 @@ export default function Popup({ modal, setModal }: PopupProps) {
     email: string;
     message: string;
   }>();
+
+  // TODO:
+  // - Add a success message above Submit button
+  // - Clear out form inputs on success | do you need a success/error state?
+  // - If error then show error message (format this for a user. don't just output the error message) above Submit button
+  // - Do you want to close the modal on success? Think about using a delay for this
+  // - Check input validations and look into validating on the server side
 
   return modal ? (
     <form
@@ -54,11 +74,12 @@ export default function Popup({ modal, setModal }: PopupProps) {
             <p className="font-light text-sm text-white">
               Kindly fill out the form
             </p>
-            <div className="space-y-6 flex flex-col">
+            <div className="space-y-6 flex flex-col text-white">
               <input
                 className="bg-[#2B2D41] mt-4 p-2 rounded-md "
                 placeholder="Your Email"
                 id="email"
+                required
                 {...register("email", {
                   required: "Email is required",
                   pattern: {
@@ -87,7 +108,7 @@ export default function Popup({ modal, setModal }: PopupProps) {
 
               <textarea
                 placeholder="Your Message"
-                className="bg-[#2B2D41] p-2 h-48 rounded-md text-white font-medium"
+                className="bg-[#2B2D41] p-2 h-48 rounded-md font-medium"
                 id="messsage"
                 {...register("message")}
                 onChange={(e) => setMessage(e.target.value)}
@@ -95,10 +116,11 @@ export default function Popup({ modal, setModal }: PopupProps) {
             </div>
             <div className="flex  justify-center">
               <button
+               disabled={loading}
                 onClick={handleSubmit}
-                className=" bg-red w-36 rounded-lg p-2 text-white font-medium mt-10"
+                className={`${loading ? 'bg-slate-400' : ''} bg-red w-36 rounded-lg p-2 text-white font-medium mt-10 ${loading ? "opacity-50 cursor-not-allowed" : ""}`}
               >
-                Submit
+                { loading ? "Sending..." : "Submit"}
               </button>
             </div>
           </div>
