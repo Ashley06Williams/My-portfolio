@@ -1,8 +1,7 @@
 "use client";
 
 import { sendEmail } from "@/actions";
-import React, { useEffect, useState } from "react";
-import { useFormState } from "react-dom";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
 type PopupProps = {
@@ -22,10 +21,10 @@ export default function Popup({ modal, setModal }: PopupProps) {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const [sendEmailState, sendEmailAction] = useFormState(sendEmail, {
-    error: null,
-    success: false,
-  });
+  // const [sendEmailState, sendEmailAction] = useFormState(sendEmail, {
+  //   error: null,
+  //   success: false,
+  // });
 
   // useEffect(() => {
   //   if (sendEmailState.success) {
@@ -46,7 +45,7 @@ export default function Popup({ modal, setModal }: PopupProps) {
       formData.append("email", data.email);
       formData.append("message", data.message);
 
-      await sendEmail(sendEmailState, formData);
+      await sendEmail(formData);
     } catch (errors) {
       alert("Error sending email");
     } finally {

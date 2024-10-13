@@ -4,6 +4,11 @@ import React, { useState } from "react";
 
 import Popup from "./form-popup";
 
+type PopupProps = {
+  modal: boolean;
+  setModal: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
 const contactInfo = [
   {
     id: 1,
@@ -22,9 +27,7 @@ const contactInfo = [
   },
 ];
 
-export default function FormPage() {
-  const [modal, setModal] = useState(false);
-
+export default function FormPage({ modal, setModal }: PopupProps) {
   const toggleModal = () => {
     setModal(!modal);
   };
@@ -52,7 +55,7 @@ export default function FormPage() {
         <div className="w-2/3 ml-72 justify- mt-20">
           <button
             onClick={toggleModal}
-            className="bg-red text-white p-2 px-12 rounded-tr-xl rounded-bl-xl"
+            className="bg-red text-white p-2 px-12 rounded-tr-xl rounded-bl-xl hover:bg-red-light"
           >
             Message Me
           </button>

@@ -3,7 +3,12 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
 
-export default function HeroSection() {
+type PopupProps = {
+  modal: boolean;
+  setModal: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export default function HeroSection({ setModal, modal }: PopupProps) {
   return (
     <div className="bg-blueGrey max-w-[1200px] mx-auto h-screen  flex flex-col justify-center">
       <div className="max-w-[800]">
@@ -31,7 +36,12 @@ export default function HeroSection() {
           modern, responsive websites. I am constantly seeking new opportunities
           to improve my skills.
         </p>
-        <button className="bg-red p-4 px-20 text-white">Contact me</button>
+        <button
+          className="bg-red p-4 px-20 text-white hover:bg-red-light rounded-tr-xl rounded-bl-xl"
+          onClick={() => setModal(!modal)}
+        >
+          Contact me
+        </button>
       </div>
     </div>
   );
