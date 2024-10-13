@@ -1,38 +1,32 @@
 "use server";
-
 import { Resend } from "resend";
+import { EmailTemplate } from "./email/emailTemplate";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
-interface State {
-  error: string | null
-  success: boolean
-}
-
-export const sendEmail = async (name: string, email: string, message: string) => {
-
+type State = {
+  error: string | null;
+  success: boolean;
+};
+export const sendEmail = async (formData: FormData) => {
+  const name = formData.get("name") as string;
+  const email = formData.get("email") as string;
+  const message = formData.get("message") as string;
   try {
-    const response = await resend.emails.send({
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    await resend.emails.send({
       from: "onboarding@resend.dev",
       to: "ashley@waterfalldigital.co.za",
-      subject: "New Contact Form Submission",
-      html: `
-        <p>Name: ${name}</p>
-        <p>Email: ${email}</p>
-        <p>Message: ${message}</p>
-      `,
+      subject: "Form Submission",
+      react: EmailTemplate({ name, email, message }),
     });
-    console.log(response);
     return {
       error: null,
-      success: true
-    }
+      success: true,
+    };
   } catch (error) {
-    console.error(error);
+    console.log(error);
     return {
       error: (error as Error).message,
-      success: false
-    }
+      success: false,
+    };
   }
 };
-export default sendEmail;

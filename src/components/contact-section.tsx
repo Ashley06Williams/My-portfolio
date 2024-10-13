@@ -2,20 +2,23 @@
 
 import React, { useState } from "react";
 
-import Popup from "./popup";
+import Popup from "./form-popup";
 
 const contactInfo = [
   {
     id: 1,
     info: "+27 (61) 549-4028",
+    svg: "/phoneIcon.svg",
   },
   {
     id: 2,
     info: "ashley@waterfalldigital.co.za",
+    svg: "/emailIcon.svg",
   },
   {
     id: 3,
     info: "Western Cape, South Africa",
+    svg: "/mapIcon.svg",
   },
 ];
 
@@ -39,9 +42,10 @@ export default function FormPage() {
           {contactInfo.map((data) => (
             <div
               key={data.id}
-              className="w-[400px] bg-[#464C71] rounded-md text-white font-semibold mb-[30px] p-3 shadow-md hover:shadow-2xl"
+              className=" flex w-[400px] bg-[#464C71] rounded-md text-white font-semibold mb-[30px] p-3 shadow-md hover:shadow-2xl"
             >
-              {data.info}
+              <img src={data.svg} className="w-6 mr-4" />
+              <p>{data.info}</p>
             </div>
           ))}
         </div>

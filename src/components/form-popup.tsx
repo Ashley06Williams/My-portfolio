@@ -1,40 +1,64 @@
-'use client'
+"use client";
 
-import React, { useState } from "react";
+import { sendEmail } from "@/actions";
+import React, { useEffect, useState } from "react";
+import { useFormState } from "react-dom";
 import { useForm } from "react-hook-form";
-import sendEmail from "@/actions";
 
 type PopupProps = {
   modal: boolean;
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
+type FormDataType = {
+  name: string;
+  email: string;
+  message: string;
+};
+
 export default function Popup({ modal, setModal }: PopupProps) {
-  
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const [sendEmailState, sendEmailAction] = useFormState(sendEmail, {
+    error: null,
+    success: false,
+  });
+
+  // useEffect(() => {
+  //   if (sendEmailState.success) {
+  //   }
+  //   if (sendEmailState.error) {
+  //   }
+  // }, [sendEmailState]);
+
   const toggleModal = () => setModal(!modal);
 
-  const handleSubmit = async (e:any) => {
-    e.preventDefault();
+  const onSubmit = async (data: FormDataType) => {
+    console.log(data.name);
 
     try {
       setLoading(true);
-      const response = await sendEmail(name, email, message);
+      const formData = new FormData();
+      formData.append("name", data.name);
+      formData.append("email", data.email);
+      formData.append("message", data.message);
 
+      await sendEmail(sendEmailState, formData);
+    } catch (errors) {
+      alert("Error sending email");
+    } finally {
       setLoading(false);
-    } catch (error) {
-      console.log(error);
+      reset();
+      setTimeout(() => setModal(!modal), 2000);
     }
-
-    console.log(name, email, message);
   };
   const {
     register,
-    trigger,
+    handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<{
     name: string;
@@ -50,13 +74,8 @@ export default function Popup({ modal, setModal }: PopupProps) {
   // - Check input validations and look into validating on the server side
 
   return modal ? (
-    <form
-      action={async (FormData) => {
-        const result = await trigger();
-        if (!result) return;
-      }}
-    >
-      <div className="fixed top-0 left-0 w-[100%] h-[100vh] bg-white bg-opacity-10 flex justify-center items-center">
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div className="fixed top-0 left-0 w-[100%] h-[100vh] bg-white bg-opacity-10 flex justify-center items-center ">
         <div
           className="relative p-[32px] w-[100%] max-w-[640px] bg-[#181A29] rounded-lg scroll-py-12 
       "
@@ -67,12 +86,13 @@ export default function Popup({ modal, setModal }: PopupProps) {
           >
             <img src="/cancel-01-stroke-rounded.svg" className="p-4 mt-6 " />
           </button>
+
           <div className="flex flex-col">
             <h2 className="text-[45px] font-semibold mb-2 text-white">
               Let's get in <span className="text-red">touch</span>
             </h2>
-            <p className="font-light text-sm text-white">
-              Kindly fill out the form
+            <p className="font-light text-sm text-white -mt-2">
+              Cheers to the beginning of something great !
             </p>
             <div className="space-y-6 flex flex-col text-white">
               <input
@@ -82,6 +102,7 @@ export default function Popup({ modal, setModal }: PopupProps) {
                 required
                 {...register("email", {
                   required: "Email is required",
+
                   pattern: {
                     value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
                     message: "Invalid email address",
@@ -98,7 +119,7 @@ export default function Popup({ modal, setModal }: PopupProps) {
                 className="bg-[#2B2D41] p-2 rounded-md"
                 id="name"
                 {...register("name", {
-                  required: "Name is required",
+                  required: "Your name is required",
                 })}
                 onChange={(e) => setName(e.target.value)}
               />
@@ -116,16 +137,28 @@ export default function Popup({ modal, setModal }: PopupProps) {
             </div>
             <div className="flex  justify-center">
               <button
-               disabled={loading}
-                onClick={handleSubmit}
-                className={`${loading ? 'bg-slate-400' : ''} bg-red w-36 rounded-lg p-2 text-white font-medium mt-10 ${loading ? "opacity-50 cursor-not-allowed" : ""}`}
+                type="submit"
+                className={`${
+                  loading ? "bg-[#4BB543]" : "bg-red"
+                } w-36 rounded-lg p-2 text-white font-medium mt-10`}
+                disabled={loading}
               >
-                { loading ? "Sending..." : "Submit"}
+                {loading ? "Sending..." : "Submit"}
               </button>
             </div>
           </div>
         </div>
       </div>
+      {/* {loading ? (
+        <div className="h-screen w-screen absolute bg-black bg-opacity-40">
+          <Spinner
+            aria-label="Default status example"
+            className="text-center "
+            size="sm"
+            color="red"
+          />
+        </div>
+      ) : null} */}
     </form>
   ) : null;
 }
