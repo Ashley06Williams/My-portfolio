@@ -6,7 +6,7 @@ type State = {
   error: string | null;
   success: boolean;
 };
-export const sendEmail = async (formData: FormData) => {
+export const sendEmail = async (prevStae: State, formData: FormData) => {
   const name = formData.get("name") as string;
   const email = formData.get("email") as string;
   const message = formData.get("message") as string;
@@ -18,6 +18,7 @@ export const sendEmail = async (formData: FormData) => {
       subject: "Form Submission",
       react: EmailTemplate({ name, email, message }),
     });
+
     return {
       error: null,
       success: true,

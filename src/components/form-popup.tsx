@@ -1,7 +1,8 @@
 "use client";
 
 import { sendEmail } from "@/actions";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useFormState } from "react-dom";
 import { useForm } from "react-hook-form";
 
 type PopupProps = {
@@ -21,15 +22,13 @@ export default function Popup({ modal, setModal }: PopupProps) {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // const [sendEmailState, sendEmailAction] = useFormState(sendEmail, {
-  //   error: null,
-  //   success: false,
-  // });
+  const [sendEmailState, sendEmailAction] = useFormState(sendEmail, {
+    error: null,
+    success: false,
+  });
 
   // useEffect(() => {
   //   if (sendEmailState.success) {
-  //   }
-  //   if (sendEmailState.error) {
   //   }
   // }, [sendEmailState]);
 
@@ -39,19 +38,18 @@ export default function Popup({ modal, setModal }: PopupProps) {
     console.log(data.name);
 
     try {
-      setLoading(true);
       const formData = new FormData();
       formData.append("name", data.name);
       formData.append("email", data.email);
       formData.append("message", data.message);
-
-      await sendEmail(formData);
+      sendEmailAction(formData);
     } catch (errors) {
+      sendEmailState.error = "There was an error sending your email";
       alert("Error sending email");
     } finally {
-      setLoading(false);
       reset();
-      setTimeout(() => setModal(!modal), 2000);
+      setLoading(false);
+      setTimeout(() => setModal(!modal), 4000);
     }
   };
   const {
@@ -74,24 +72,24 @@ export default function Popup({ modal, setModal }: PopupProps) {
 
   return modal ? (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="fixed top-0 left-0 w-[100%] h-[100vh] bg-white bg-opacity-10 flex justify-center items-center ">
+      <div className="fixed top-0 left-0 w-[100%] h-[100vh] bg-white bg-opacity-10 flex flex-wrap justify-center items-center ">
         <div
-          className="relative p-[32px] w-[100%] max-w-[640px] bg-[#181A29] rounded-lg scroll-py-12 
+          className="relative p-[32px] w-[100%] max-w-[350px] md:max-w-[640px] bg-[#181A29] rounded-lg scroll-py-12 
       "
         >
           <button
             onClick={toggleModal}
-            className="absolute top-[16px] right-[16px] "
+            className="absolute md:top-[16px] md:right-[16px] top-[3px] right-[3px]"
           >
             <img src="/cancel-01-stroke-rounded.svg" className="p-4 mt-6 " />
           </button>
 
           <div className="flex flex-col">
-            <h2 className="text-[45px] font-semibold mb-2 text-white">
+            <h2 className="text-[30px] md:text-[45px] font-semibold mb-2 text-white">
               Let's get in <span className="text-red">touch</span>
             </h2>
-            <p className="font-light text-sm text-white -mt-2">
-              Cheers to the beginning of something great !
+            <p className="font-light text-[13px] md:text-sm text-white -mt-2">
+              Looking forward to connecting with you
             </p>
             <div className="space-y-6 flex flex-col text-white">
               <input
@@ -138,26 +136,25 @@ export default function Popup({ modal, setModal }: PopupProps) {
               <button
                 type="submit"
                 className={`${
-                  loading ? "bg-[#4BB543]" : "bg-red"
-                } w-36 rounded-lg p-2 text-white font-medium mt-10`}
-                disabled={loading}
+                  loading || sendEmailState.success ? "bg-[#4BB543]" : "bg-red"
+                } 
+                w-36 rounded-lg p-2 text-white font-medium mt-10`}
+                disabled={loading || sendEmailState.success}
               >
-                {loading ? "Sending..." : "Submit"}
+                {loading
+                  ? "Sending..."
+                  : sendEmailState.success
+                  ? "Sent!"
+                  : sendEmailState.error
+                  ? "Error"
+                  : "Submit"}
+
+                {/* {loading ? "Sending..." : "Submit"} */}
               </button>
             </div>
           </div>
         </div>
       </div>
-      {/* {loading ? (
-        <div className="h-screen w-screen absolute bg-black bg-opacity-40">
-          <Spinner
-            aria-label="Default status example"
-            className="text-center "
-            size="sm"
-            color="red"
-          />
-        </div>
-      ) : null} */}
     </form>
   ) : null;
 }
