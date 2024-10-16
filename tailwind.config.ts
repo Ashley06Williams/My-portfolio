@@ -18,6 +18,7 @@ const config: Config = {
         blueGrey: {
           DEFAULT: "#23263A",
           light: "#2B2D41",
+          dark: "#12131B",
         },
         white: "#FFFFFF",
       },

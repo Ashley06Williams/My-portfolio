@@ -6,7 +6,7 @@ export default function CardContainer({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex justify-between items-center space-x-20 mx-auto">
+    <div className="flex md:flex-row flex-col flex-wrap justify-between items-center  mx-auto ">
       {children}
     </div>
   );

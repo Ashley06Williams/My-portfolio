@@ -1,7 +1,10 @@
 "use client";
+import { Button, Navbar } from "flowbite-react";
+import NavLink from "./navLinks";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
+import MenuOverlay from "./MenuOverlay";
 
-import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 const menuItems = [
   {
@@ -28,35 +31,45 @@ export const handleHomeClick = (e: React.MouseEvent<HTMLElement>) => {
 };
 
 export default function HeaderSection() {
+  const [navOpen, setNavOpen] = useState(false);
+
   return (
-    <div className=" max-w-[1200px] ">
-      <nav className="flex justify-between pt-4 min-w-[500px] sm:min-w-[1200px] fixed backdrop-blur-[2px]  pb-4">
-        <a
-          href="/"
-          onClick={handleHomeClick}
-          className="text-white font-extrabold "
-        >
-          A<span className="text-red">sh</span>ley
-        </a>
-        <div className="space-x-6">
-          <Link
-            href="/"
-            onClick={handleHomeClick}
-            className="text-white hover:text-red"
+    <nav className="w-full px-4 max-w-[1200px]  fixed backdrop-blur-[11px] bg-blueGrey-dark bg-opacity-20 flex flex-wrap justify-between md:space-x-0 mx-auto pt-4  items-center  pb-4 ">
+      <a
+        href="/"
+        onClick={handleHomeClick}
+        className="text-white font-extrabold mr-8 md:mr-0 "
+      >
+        A<span className="text-red">sh</span>ley
+      </a>
+      <div className="MOBILE-MENU block md:hidden ">
+        {!navOpen ? (
+          <button
+            onClick={() => setNavOpen(true)}
+            className="flex items-center  px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-red hover:border-red"
           >
-            Home
-          </Link>
+            <Bars3Icon className="w-5 h-5" />
+          </button>
+        ) : (
+          <button
+            onClick={() => setNavOpen(false)}
+            className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-red hover:border-red"
+          >
+            <XMarkIcon className="w-5 h-5" />
+          </button>
+        )}
+      </div>
+
+      <div className="MENU space-x-4 md:space-x-6 hidden md:block">
+        <ul className="flex flex-col md:flex-row p-4 sm:p-0">
           {menuItems.map((menuItem) => (
-            <Link
-              href={menuItem.slug}
-              key={menuItem.id}
-              className="text-white hover:text-red"
-            >
-              {menuItem.name}
-            </Link>
+            <li key={menuItem.id}>
+              <NavLink href={menuItem.slug} title={menuItem.name} />
+            </li>
           ))}
-        </div>
-      </nav>
-    </div>
+        </ul>
+      </div>
+      {navOpen ? <MenuOverlay links={menuItems} /> : null}
+    </nav>
   );
 }
