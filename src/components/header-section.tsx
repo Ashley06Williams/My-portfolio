@@ -61,7 +61,7 @@ export default function HeaderSection() {
       </div>
 
       <div className="MENU space-x-4 md:space-x-6 hidden md:block">
-        <ul className="flex flex-col md:flex-row p-4 sm:p-0">
+        <ul className="flex flex-col md:flex-row p-4 sm:p-0 ">
           {menuItems.map((menuItem) => (
             <li key={menuItem.id}>
               <NavLink href={menuItem.slug} title={menuItem.name} />
