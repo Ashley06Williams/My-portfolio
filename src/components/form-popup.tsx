@@ -17,9 +17,13 @@ type FormDataType = {
 };
 
 export default function Popup({ modal, setModal }: PopupProps) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [name, setName] = useState("");
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [email, setEmail] = useState("");
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [message, setMessage] = useState("");
+
   const [loading, setLoading] = useState(false);
 
   const [sendEmailState, sendEmailAction] = useFormState(sendEmail, {
@@ -43,6 +47,8 @@ export default function Popup({ modal, setModal }: PopupProps) {
       formData.append("email", data.email);
       formData.append("message", data.message);
       sendEmailAction(formData);
+
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (errors) {
       sendEmailState.error = "There was an error sending your email";
       alert("Error sending email");
