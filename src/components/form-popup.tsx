@@ -1,7 +1,7 @@
 "use client";
-
+// @ts-ignore
 import { sendEmail } from "@/actions";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useFormState } from "react-dom";
 import { useForm } from "react-hook-form";
 

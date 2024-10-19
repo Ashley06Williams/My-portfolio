@@ -46,7 +46,7 @@ export default function AbilitySection() {
             key={cardItem.id}
             className="flex flex-col flex-wrap bg-blueGrey-light w-3/4 md:w-1/4 h-[350px] md:h-[500px] p-4  pt-4 md:pt-14 mb-2 md:mb-6 shadow-md "
           >
-            <img src={cardItem.src} className="w-8" />
+            <img src={cardItem.src} className="w-8" alt="icon" />
             <h3 className="text-white font-semibold text-[16px] mt-6 mb-4">
               {cardItem.title}
             </h3>

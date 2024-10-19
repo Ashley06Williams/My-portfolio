@@ -12,7 +12,7 @@ export default function HeroSection({ setModal, modal }: PopupProps) {
   return (
     <div className="bg-blueGrey max-w-[1200px] mx-auto h-screen flex flex-col flex-wrap justify-center p-4 text-left">
       <div className="max-w-[800px] ">
-        <h2 className="text-red text-[20px] md:text-[40px]">Hello, I'm</h2>
+        <h2 className="text-red text-[20px] md:text-[40px]">Hello, I&apos;m</h2>
         <TypeAnimation
           sequence={[
             // Same substring at the start will only be typed out once, initially

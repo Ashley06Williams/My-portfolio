@@ -1,6 +1,4 @@
-"use client";
-
-import React, { useState } from "react";
+import React from "react";
 
 import Popup from "./form-popup";
 
@@ -38,7 +36,7 @@ export default function FormPage({ modal, setModal }: PopupProps) {
         <div className="flex flex-col w-1/3 items-center justify-start md:justify-center md:items-start">
           <div className="w">
             <h3 className="text-white text-[14px] md:text-[18px] text-center md:text-left">
-              Let's connect
+              Let&apos;s connect
             </h3>
             <h1 className="font-semibold text-[55px] md:text-[60px] text-white -mt-2 mb-4 text-center md:text-left leading-tight md:leading-normal">
               <span className="text-red mt-4">Contact</span> Me
@@ -49,7 +47,7 @@ export default function FormPage({ modal, setModal }: PopupProps) {
               key={data.id}
               className=" flex md:flex-row flex-col  w-[250px] md:w-[400px] bg-[#464C71] rounded-md text-white font-semibold mb-[30px] p-3 shadow-md hover:shadow-2xl "
             >
-              <img src={data.svg} className="w-6 mr-4" />
+              <img src={data.svg} className="w-6 mr-4" alt="icon" />
               <p>{data.info}</p>
             </div>
           ))}
