@@ -24,7 +24,6 @@ export const sendEmail = async (prevStae: State, formData: FormData) => {
       success: true,
     };
   } catch (error) {
-    console.log(error);
     return {
       error: (error as Error).message,
       success: false,

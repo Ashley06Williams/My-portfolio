@@ -39,7 +39,7 @@ export default function Popup({ modal, setModal }: PopupProps) {
   const toggleModal = () => setModal(!modal);
 
   const onSubmit = async (data: FormDataType) => {
-    console.log(data.name);
+    // console.log(data.name);
 
     try {
       const formData = new FormData();
