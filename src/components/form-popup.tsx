@@ -1,5 +1,5 @@
 "use client";
-// @ts-ignore
+// "@ts-expect-error"
 import { sendEmail } from "@/actions";
 import React, { useState } from "react";
 import { useFormState } from "react-dom";
@@ -81,12 +81,16 @@ export default function Popup({ modal, setModal }: PopupProps) {
             onClick={toggleModal}
             className="absolute md:top-[16px] md:right-[16px] top-[3px] right-[3px]"
           >
-            <img src="/cancel-01-stroke-rounded.svg" className="p-4 mt-6 " />
+            <img
+              src="/cancel-01-stroke-rounded.svg"
+              className="p-4 mt-6 "
+              alt="exit button"
+            />
           </button>
 
           <div className="flex flex-col">
             <h2 className="text-[30px] md:text-[45px] font-semibold mb-2 text-white">
-              Let's get in <span className="text-red">touch</span>
+              Let&apos;s get in <span className="text-red">touch</span>
             </h2>
             <p className="font-light text-[13px] md:text-sm text-white -mt-2">
               Looking forward to connecting with you
