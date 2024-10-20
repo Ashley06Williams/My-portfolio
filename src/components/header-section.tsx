@@ -40,7 +40,7 @@ export default function HeaderSection() {
         onClick={handleHomeClick}
         className="text-white font-extrabold mr-8 md:mr-0 "
       >
-        A<span className="text-red">sh</span>ley
+        CODEDBY<span className="text-red">ASH</span>
       </a>
       <div className="MOBILE-MENU block md:hidden ">
         {!navOpen ? (
