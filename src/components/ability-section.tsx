@@ -34,17 +34,15 @@ const cardItems = [
 export default function AbilitySection() {
   return (
     <div>
-      <h3 className="text-white text-[16px] text-center md:text-left">
-        My Abilities
-      </h3>
-      <h1 className="font-semibold text-[60px] text-white -mt-2 mb-4 text-center md:text-left">
+      <h3 className="text-white text-[16px]">My Abilities</h3>
+      <h1 className="font-semibold text-[60px] text-white -mt-2 mb-4">
         <span className="text-red">Tech</span>Stack
       </h1>
-      <div className="flex flex-col flex-wrap md:flex-nowrap md:flex-row md:justify-between align-middle items-center  md:space-x-20 mx-auto">
+      <div className="flex flex-col md:flex-row md:space-x-8 md:space-y-0 space-y-6 mx-auto">
         {cardItems.map((cardItem) => (
           <div
             key={cardItem.id}
-            className="flex flex-col flex-wrap bg-blueGrey-light w-3/4 md:w-1/4 h-[350px] md:h-[500px] p-4  pt-4 md:pt-14 mb-2 md:mb-6 shadow-md "
+            className="flex flex-col bg-blueGrey-light w-full md:w-[22%] h-auto md:h-[500px] p-4 pt-4 md:pt-14 shadow-md"
           >
             <img src={cardItem.src} className="w-8" alt="icon" />
             <h3 className="text-white font-semibold text-[16px] mt-6 mb-4">

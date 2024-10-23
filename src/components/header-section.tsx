@@ -34,20 +34,20 @@ export default function HeaderSection() {
   const [navOpen, setNavOpen] = useState(false);
 
   return (
-    <nav className="w-full px-4  fixed backdrop-blur-[11px] bg-blueGrey-dark bg-opacity-35 flex flex-wrap justify-center md:space-x-0 mx-auto pt-4  items-center pb-4 ">
-      <div className="flex items-center justify-between w-[1200px]">
+    <nav className="w-full px-4 fixed backdrop-blur-[11px] bg-blueGrey-dark bg-opacity-35 flex flex-wrap justify-center mx-auto pt-4 items-center pb-4">
+      <div className="flex items-center justify-between w-full">
         <a
           href="/"
           onClick={handleHomeClick}
-          className="text-white font-extrabold mr-8 md:mr-0 "
+          className="text-white font-extrabold mr-8"
         >
           CODEDBY<span className="text-red">ASH</span>
         </a>
-        <div className="MOBILE-MENU block md:hidden ">
+        <div className="MOBILE-MENU block md:hidden">
           {!navOpen ? (
             <button
               onClick={() => setNavOpen(true)}
-              className="flex items-center  px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-red hover:border-red"
+              className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-red hover:border-red"
             >
               <Bars3Icon className="w-5 h-5" />
             </button>
@@ -61,8 +61,8 @@ export default function HeaderSection() {
           )}
         </div>
 
-        <div className="MENU space-x-4 md:space-x-6 hidden md:block">
-          <ul className="flex flex-col md:flex-row p-4 sm:p-0 ">
+        <div className="MENU hidden md:block space-x-4 md:space-x-6">
+          <ul className="flex flex-row p-4 sm:p-0">
             {menuItems.map((menuItem) => (
               <li key={menuItem.id}>
                 <NavLink href={menuItem.slug} title={menuItem.name} />
@@ -70,8 +70,10 @@ export default function HeaderSection() {
             ))}
           </ul>
         </div>
-        {navOpen ? <MenuOverlay links={menuItems} /> : null}
       </div>
+
+      {/* Display overlay when navOpen is true */}
+      {navOpen && <MenuOverlay links={menuItems} />}
     </nav>
   );
 }
