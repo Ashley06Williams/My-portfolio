@@ -11,20 +11,21 @@ import { useState } from "react";
 export default function Home() {
   const [modal, setModal] = useState(false);
   return (
-    <div className="bg-blueGrey h-full flex flex-col items-center">
+    <div>
       <header className="w-full flex justify-center items-start">
         <HeaderSection />
       </header>
-      <HeaderSection />
-      <div className="max-w-[1200px] mx-auto ">
-        <main className="">
-          <HeroSection setModal={setModal} modal={modal} />
-          <AbilitySection />
-          <WorkSection />
+      <div className="bg-blueGrey h-full flex flex-col items-center">
+        <div className="max-w-[1200px] mx-auto ">
+          <main className="">
+            <HeroSection setModal={setModal} modal={modal} />
+            <AbilitySection />
+            <WorkSection />
 
-          <AboutMe />
-          <FormPage modal={modal} setModal={setModal} />
-        </main>
+            <AboutMe />
+            <FormPage modal={modal} setModal={setModal} />
+          </main>
+        </div>
       </div>
     </div>
   );
