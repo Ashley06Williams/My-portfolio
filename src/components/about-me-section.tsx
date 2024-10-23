@@ -2,12 +2,9 @@ import React from "react";
 
 export default function AboutMe() {
   return (
-    <section
-      id="about"
-      className="mt-[650px] md:mt-32 p-4 text-center md:text-left md:p-0"
-    >
+    <section id="about" className="mt-[650px] md:mt-32 p-4 md:p-0 scroll-mt-32">
       <div className=" ">
-        <div className="flex flex-col md:flex-row md:flex-1 flex-wrap md:flex-nowrap md:justify-between items-center md:space-x-40">
+        <div className="flex flex-col md:flex-row md:flex-1 flex-wrap md:flex-nowrap md:justify-between  md:space-x-40">
           <div>
             <h3 className="text-white text-[15px] md:text-[18px] ">
               It&apos;s great to virtually meet you!
