@@ -34,8 +34,8 @@ export default function HeaderSection() {
   const [navOpen, setNavOpen] = useState(false);
 
   return (
-    <nav className="w-full px-4 fixed backdrop-blur-[11px] bg-blueGrey-dark bg-opacity-35 flex flex-wrap justify-center mx-auto pt-4 items-center pb-4">
-      <div className="flex items-center justify-between w-full">
+    <nav className="w-full fixed backdrop-blur-[11px] bg-blueGrey-dark bg-opacity-35 flex flex-wrap justify-center mx-auto pt-4 items-center pb-4 z-50 px-4 md:px-0">
+      <div className="max-w-[1200px] mx-auto flex items-center justify-between w-full">
         <a
           href="/"
           onClick={handleHomeClick}

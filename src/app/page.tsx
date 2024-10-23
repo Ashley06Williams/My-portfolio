@@ -17,7 +17,7 @@ export default function Home() {
         <HeaderSection />
       </header>
       <div className="bg-blueGrey h-full flex flex-col items-center ">
-        <div className="max-w-[1200px] mx-auto ">
+        <div className="max-w-[1250px] mx-auto ">
           <main className="mx-8">
             <HeroSection setModal={setModal} modal={modal} />
             <AbilitySection />
