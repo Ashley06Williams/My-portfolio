@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function FooterSection() {
@@ -14,9 +15,21 @@ export default function FooterSection() {
           Made with ❤️ and NextJS
         </p>
       </div>
-      <div className="flex px-6 space-x-2">
-        <img src="/gitHub.svg" className="w-10" />
-        <img src="/linkedIn.svg" alt="" className="w-10" />
+      <div className="flex px-6 space-x-4">
+        <Link
+          href="https://github.com/Ashley06Williams"
+          className="py-8"
+          target="_blank"
+        >
+          <img src="/gitHub.svg" className="w-10" />
+        </Link>
+        <Link
+          href="https://www.linkedin.com/in/ashley-williams-251693304/ "
+          className="py-8"
+          target="_blank"
+        >
+          <img src="/linkedIn.svg" alt="" className="w-10" />
+        </Link>
       </div>
     </div>
   );
