@@ -3,7 +3,7 @@ import React from "react";
 
 export default function FooterSection() {
   return (
-    <div className=" flex justify-between p-2  h-full md:mx-[200px] mx-0">
+    <div className=" flex justify-between p-2  h-full md:max-w-[1200px] mx-auto">
       <div className="">
         <p className="text-[20px] p-3 text-white font-bold mt-1">
           CODEDBY<span className="text-red">ASH</span>
