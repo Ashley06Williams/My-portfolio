@@ -21,7 +21,7 @@ export default function FooterSection() {
           className="py-8"
           target="_blank"
         >
-          <img src="/gitHub.svg" className="w-10" />
+          <img src="/gitHub.svg" alt="mortgage calc page" className="w-10" />
         </Link>
         <Link
           href="https://www.linkedin.com/in/ashley-williams-251693304/ "
