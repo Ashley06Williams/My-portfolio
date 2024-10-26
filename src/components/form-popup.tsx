@@ -1,6 +1,7 @@
 "use client";
 // "@ts-expect-error"
 import { sendEmail } from "@/actions";
+import { log } from "console";
 import React, { useState } from "react";
 import { useFormState } from "react-dom";
 import { useForm } from "react-hook-form";
@@ -50,8 +51,10 @@ export default function Popup({ modal, setModal }: PopupProps) {
 
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (errors) {
+      console.error(errors);
       sendEmailState.error = "There was an error sending your email";
       alert("Error sending email");
+      setLoading(false);
     } finally {
       reset();
       setLoading(false);
