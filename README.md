@@ -1,19 +1,70 @@
-Welcome to My Portfolio
 
-- Ashley Williams
-  This portfolio showcases my skills, experience, and projects. It serves as a platform for potential clients and employers to learn more about me, my work, and how to contact me.
 
-Site Description
-The site contains the following sections:
 
-About Me: A brief introduction to my background and interests.
-My Work: A showcase of projects I’ve completed, demonstrating my skills and expertise.
-Contact Details: Information on how to reach me for inquiries or collaborations.
-Tech Stack
-Next.js
-React
-JavaScript
-Java
-Resend
 
-![alt text](image.png)
+# Ashley Williams - Portfolio
+A modern, responsive portfolio showcasing my journey as a developer and the projects I've built along the way.
+
+## 🌟 Features
+
+- **Clean, Modern Design** - Built with a focus on user experience
+- **Responsive Layout** - Looks great on all devices
+- **Interactive Project Gallery** - Showcase of my work with live demos
+- **Contact Form** - Direct communication channel using Resend API
+- **Dark Theme** - Easy on the eyes
+- **Smooth Animations** - Enhanced user experience with subtle animations
+
+## 🛠️ Built With
+
+- Next.js 14
+- React
+- TypeScript
+- Tailwind CSS
+- Resend (for email functionality)
+
+## 🚀 Getting Started
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/yourusername/portfolio.git
+```
+
+2. **Install dependencies**
+```bash
+npm install
+# or
+yarn install
+```
+
+3. **Set up environment variables**
+Create a `.env.local` file in the root directory:
+```env
+RESEND_API_KEY=your_resend_api_key_here
+```
+
+4. **Run the development server**
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) to view the site.
+
+## 📝 Environment Variables
+
+The following environment variables are required:
+
+```env
+RESEND_API_KEY=          # Your Resend API key for email functionality
+```
+
+You can obtain a Resend API key by:
+1. Sign up at [resend.com](https://resend.com)
+2. Create a new API key in your dashboard
+3. Copy the key to your `.env.local` file
+
+## 📫 Contact
+
+Project Link: [https://github.com/yourusername/portfolio](https://github.com/yourusername/portfolio)
+https://www.linkedin.com/in/ashley-williams-251693304/
