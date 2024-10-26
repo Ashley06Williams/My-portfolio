@@ -19,21 +19,21 @@ const cardItems = [
     src: "/java-script-stroke-rounded.svg",
     title: "JavaScript",
     description:
-      "JavaScript is my core programming language in which I started on my coding journey, beginning within a Udemy course. I was taught the fundamentals of programming and currently building on this knowledge enhance my front-end and back-end development",
+      "JavaScript is my core programming language in which I started on my coding journey, beginning within a Udemy course (BootCamp). I was taught the fundamentals of programming and currently building on this knowledge enhance my front-end and back-end development",
     id: 3,
   },
   {
     src: "/java-stroke-rounded.svg",
     title: "Java",
     description:
-      "I have been learning Java in school for the past two years focusing on the basics and fundamentals of programming, by learning two languages simultaneously I have seen the baisc concept of programming is very similar. Although not very skilled I hope to improve my skills across and continously learn as much as I can",
+      "I have been learning Java in school for the past two years focusing on the basics and fundamentals of programming mainly focues on object orientated programming, by learning two languages simultaneously I have seen the baisc concept of programming is very similar. Although not very skilled I hope to improve my skills throughout my career and continously learn as much as I can",
     id: 4,
   },
 ];
 
 export default function AbilitySection() {
   return (
-    <div>
+    <div className="section-spacing">
       <h3 className="text-white text-[16px]">My Abilities</h3>
       <h1 className="font-semibold text-[60px] text-white -mt-2 mb-4">
         <span className="text-red">Tech</span>Stack
@@ -42,7 +42,7 @@ export default function AbilitySection() {
         {cardItems.map((cardItem) => (
           <div
             key={cardItem.id}
-            className="flex flex-col bg-blueGrey-light w-full md:w-[22%] h-auto md:h-[500px] p-4 pt-4 md:pt-14 shadow-md"
+            className="flex flex-col bg-blueGrey-light w-full md:w-[22%] h-auto  p-4 md:pt-10 shadow-md hover:shadow-xl"
           >
             <img src={cardItem.src} className="w-8" alt="icon" />
             <h3 className="text-white font-semibold text-[16px] mt-6 mb-4">

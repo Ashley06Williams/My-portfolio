@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+section-spacing {
+  @apply my-40;
+}
+
+@media (max-width: 475px) {
+  .section-spacing {
+    @apply my-20;
+  }
+}
