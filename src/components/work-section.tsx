@@ -25,7 +25,7 @@ const workItem = [
 
 export default function WorkSection() {
   return (
-    <section id="work" className=" scroll-mt-32 section-spacing ">
+    <section id="work" className=" scroll-mt-32 section-spacing md:mt-20">
       <div className="text-left ">
         <h3 className="text-white text-[16px]">Take a look at</h3>
         <h1 className="font-semibold text-[60px] text-white -mt-2 mb-4">
