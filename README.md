@@ -1,4 +1,4 @@
-
+![Screenshot 2024-10-26 at 17 00 29](https://github.com/user-attachments/assets/bad06aec-c082-4fa4-bd3e-7f30228a95af)
 
 
 
@@ -26,7 +26,7 @@ A modern, responsive portfolio showcasing my journey as a developer and the proj
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/portfolio.git
+git clone https://github.com/yourusername/My-portfolio.git
 ```
 
 2. **Install dependencies**
