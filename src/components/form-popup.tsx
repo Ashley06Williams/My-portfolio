@@ -1,7 +1,7 @@
 "use client";
 // "@ts-expect-error"
 import { sendEmail } from "@/actions";
-import { log } from "console";
+
 import React, { useState } from "react";
 import { useFormState } from "react-dom";
 import { useForm } from "react-hook-form";

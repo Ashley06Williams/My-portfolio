@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const workItem = [
   {
-    imgSrc: "/mortgCalc.png",
+    imgSrc: "/mortDisplay.webp",
     title: "Mortgage Calculator",
     workLink: "https://mortgage-calc-chi.vercel.app/",
     id: 1,
@@ -36,16 +36,16 @@ export default function WorkSection() {
         {workItem.map((item) => (
           <div
             key={item.id}
-            className="bg-blueGrey-light mb-6 shadow-md flex flex-col md:flex-row p-4 md:p-0 justify-center md:max-w-xl "
+            className="bg-blueGrey-light hover:shadow-2xl mb-6 shadow-md flex flex-col md:flex-row p-4 md:p-0 justify-center md:max-w-xl "
           >
             <div className="flex flex-col  items-center justify-center  md:w-1/2">
               <img
                 src={item.imgSrc}
-                className="w-[475px] h-[50%] md:ml-8"
+                className="w-[475px] md:h-[90%] md:ml-8"
                 alt="project image"
               />
             </div>
-            <div className="flex flex-col  md:w-1/2  text-left md:ml-4 md:p-4">
+            <div className="flex flex-col  md:w-1/2  text-left md:ml-4 md:p-4 mt-4 md:mt-0">
               <h3 className="text-white font-semibold text-[25px] mb-2 md:mb-4 hover:underline">
                 {item.title}
               </h3>
