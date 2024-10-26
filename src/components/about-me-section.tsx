@@ -22,19 +22,19 @@ export default function AboutMe() {
             <p>
               I jumped into programming with Java at school in 2022. While it
               was tough at first, I got hooked on that feeling you get when you
-              finally crack a problem you've been stuck on. Making it a daily
-              habit, even just for an hour, really helped me progress.
+              finally crack a problem you&apos;ve been stuck on. Making it a
+              daily habit, even just for an hour, really helped me progress.
             </p>
             <p>
               That initial spark led me into web development, where I started
-              with JavaScript, moved on to React, and now I'm diving into
+              with JavaScript, moved on to React, and now I&apos;m diving into
               Next.js and keeping up with new tech.
             </p>
             <p>
               As a self-taught developer, what I might lack in formal education
               I make up for with genuine enthusiasm and a constant drive to
-              learn. Tech moves fast, and I'm always ready to adapt and grow
-              with it.
+              learn. Tech moves fast, and I&apos;m always ready to adapt and
+              grow with it.
             </p>
           </div>
         </div>

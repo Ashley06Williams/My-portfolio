@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const workItem = [
   {
-    imgSrc: "/MortgageCalc.png",
+    imgSrc: "/mortgCalc.png",
     title: "Mortgage Calculator",
     workLink: "https://mortgage-calc-chi.vercel.app/",
     id: 1,
@@ -25,8 +25,8 @@ const workItem = [
 
 export default function WorkSection() {
   return (
-    <section id="work" className=" scroll-mt-32 section-spacing">
-      <div className="text-left">
+    <section id="work" className=" scroll-mt-32 section-spacing mt-40">
+      <div className="text-left ">
         <h3 className="text-white text-[16px]">Take a look at</h3>
         <h1 className="font-semibold text-[60px] text-white -mt-2 mb-4">
           <span className="text-red">My</span> Work
@@ -36,23 +36,29 @@ export default function WorkSection() {
         {workItem.map((item) => (
           <div
             key={item.id}
-            className="bg-blueGrey-light md:w-1/4 w-[300px] h-fit p-4 pt-14 mb-6 shadow-md flex flex-col items-center justify-center"
+            className="bg-blueGrey-light mb-6 shadow-md flex flex-col md:flex-row p-4 md:p-0 justify-center md:max-w-xl "
           >
-            <div className="flex flex-col items-start">
+            <div className="flex flex-col  items-center justify-center  md:w-1/2">
               <img
                 src={item.imgSrc}
-                className="w-60 -mt-6"
+                className="w-[475px] h-[50%] md:ml-8"
                 alt="project image"
               />
             </div>
-            <div className="px-4">
-              <h3 className="text-white font-semibold text-[18px] mt-6 md:mb-4 text-left">
+            <div className="flex flex-col  md:w-1/2  text-left md:ml-4 md:p-4">
+              <h3 className="text-white font-semibold text-[25px] mb-2 md:mb-4 hover:underline">
                 {item.title}
               </h3>
+              <p className="text-[15px] text-white md:mb-2 mb-4">
+                This Next.js mortgage calculator lets users easily estimate
+                monthly payments by inputting the loan amount, interest rate,
+                and term. It offers fast performance and a user-friendly
+                interface, making it a handy tool for homebuyers.
+              </p>
               <Link
                 target="_blank"
                 href={item.workLink}
-                className="text-red hover:text-blue-500 hover:underline"
+                className="text-red hover:text-blue-500 hover:underline "
               >
                 View Project
               </Link>
