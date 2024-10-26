@@ -10,7 +10,7 @@ type PopupProps = {
 
 export default function HeroSection({ setModal, modal }: PopupProps) {
   return (
-    <div className="bg-blueGrey md:max-w-[1200px] mx-auto section-spacing md:h-screen flex flex-col flex-wrap justify-center items-start p-4 text-left ">
+    <div className="bg-blueGrey md:max-w-[1200px] mx-auto section-spacing h-screen flex flex-col flex-wrap justify-center items-start p-4 text-left ">
       {/* <div className="max-w-[800px] "> */}
       <h2 className="text-red text-[20px] md:text-[40px]">Hello, I&apos;m</h2>
       <TypeAnimation
