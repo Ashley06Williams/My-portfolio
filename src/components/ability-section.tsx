@@ -5,28 +5,28 @@ const cardItems = [
     src: "/react-stroke-rounded.svg",
     title: "React",
     description:
-      "I am currently building my expertise in react by starting off my with a course by a developer known as Bytegrad who went through the fundamentals of the framework. I am enjoying the process of enhancing my skills by building my own projects and leveling up as I go",
+      "React is a perfect fit for my journey. Its component-based design and fast Virtual DOM make it easy to build and scale dynamic projects. With React, I can focus on creating clean, reusable code blocks and responsive web design leveling up your skills as I progress in full-stack development.",
     id: 1,
   },
   {
     src: "/nextJsIcon.svg",
     title: "NextJs",
     description:
-      "Exploring the library of NextJS has been an exciting journey, with the introduction of server side and client side components I am able to see the benefits of keeping to server side benifiting the speed and optimizations of my site while also forcing myself to explore the context API in order to parse context to my app ",
+      "Exploring Next.js has been an exciting experience! Working with server-side and client-side components is giving me a clear view of the performance benefits of server-side rendering. It's also pushing me to dive deeper into the Context API to manage and pass data across my app efficiently.",
     id: 2,
   },
   {
     src: "/java-script-stroke-rounded.svg",
     title: "JavaScript",
     description:
-      "JavaScript is my core programming language in which I started on my coding journey, beginning within a Udemy course (BootCamp). I was taught the fundamentals of programming and currently building on this knowledge enhance my front-end and back-end development",
+      "JavaScript is the cornerstone of my programming journey. I first delved into coding through a Udemy BootCamp course, where I learned the fundamentals of programming. Since then, I’ve been actively building on that foundation, enhancing my skills in both front-end and back-end development.",
     id: 3,
   },
   {
     src: "/java-stroke-rounded.svg",
     title: "Java",
     description:
-      "I have been learning Java in school for the past two years focusing on the basics and fundamentals of programming mainly focues on object orientated programming, by learning two languages simultaneously I have seen the baisc concept of programming is very similar. Although not very skilled I hope to improve my skills throughout my career and continously learn as much as I can",
+      "I have been learning Java in school for the past two years, focusing on the basics and fundamentals of programming, with a particular emphasis on object-oriented programming. By studying two languages simultaneously, I've noticed that the core concepts of programming are quite similar. While I may not be highly skilled yet, I'm eager to enhance my abilities throughout my career and continuously learn as much as I can.",
     id: 4,
   },
 ];
