@@ -12,7 +12,7 @@ const workItem = [
     id: 1,
   },
   {
-    imgSrc: "/clashRoyale.png",
+    imgSrc: "/ClashRoyale.png",
     title: "Clash Royale Stats",
     workLink: "http://clash-royale-959192-461ae1-188-245-209-103.traefik.me/",
     paragraph:
