@@ -7,14 +7,18 @@ const workItem = [
     imgSrc: "/mortDisplay.webp",
     title: "Mortgage Calculator",
     workLink: "https://mortgage-calc-chi.vercel.app/",
+    paragraph:
+      "This Next.js mortgage calculator lets users easily estimate  monthly payments by inputting the loan amount, interest rate, and term. It offers fast performance and a user-friendly  interface, making it a handy tool for homebuyers.",
     id: 1,
   },
-  // {
-  //   imgSrc: "/placeholderImage.svg",
-  //   title: "Clash Royale stats checker",
-  //   workLink: "/",
-  //   id: 2,
-  // },
+  {
+    imgSrc: "/clashRoyale.png",
+    title: "Clash Royale Stats",
+    workLink: "http://clash-royale-959192-461ae1-188-245-209-103.traefik.me/",
+    paragraph:
+      "Clash Royale stat checker fetches player stats on a server-side component, overcoming CORS limitations. Deployed on a private server with a static IP due to API restrictions, it provides reliable performance without HTTPS.",
+    id: 2,
+  },
   // {
   //   imgSrc: "/placeholderImage.svg",
   //   title: "Weather app",
@@ -50,15 +54,12 @@ export default function WorkSection() {
                 {item.title}
               </h3>
               <p className="text-[15px] text-white md:mb-2 mb-4">
-                This Next.js mortgage calculator lets users easily estimate
-                monthly payments by inputting the loan amount, interest rate,
-                and term. It offers fast performance and a user-friendly
-                interface, making it a handy tool for homebuyers.
+                {item.paragraph}
               </p>
               <Link
                 target="_blank"
                 href={item.workLink}
-                className="text-red hover:text-blue-500 hover:underline "
+                className="text-red hover:text-slate-300 hover:underline text-center"
               >
                 View Project
               </Link>

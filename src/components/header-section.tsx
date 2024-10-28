@@ -8,8 +8,8 @@ import React, { useState } from "react";
 
 const menuItems = [
   {
-    name: "About",
-    slug: "#about",
+    name: "Abilities",
+    slug: "#ability",
     id: 2,
   },
   {

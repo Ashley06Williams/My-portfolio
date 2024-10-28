@@ -33,7 +33,7 @@ const cardItems = [
 
 export default function AbilitySection() {
   return (
-    <div className="section-spacing">
+    <div className="section-spacing  scroll-mt-32" id="ability">
       <h3 className="text-white text-[16px]">My Abilities</h3>
       <h1 className="font-semibold text-[60px] text-white -mt-2 mb-4">
         <span className="text-red">Tech</span>Stack
