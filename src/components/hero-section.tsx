@@ -39,16 +39,22 @@ export default function HeroSection({ setModal, modal }: PopupProps) {
         >
           Contact me
         </button>
-        <Link rel="noopener noreferrer" target="_blank" href="./MyResume.pdf">
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-            }}
-            className="bg-slate-100 text-red hover:bg-slate-300 p-2 md:p-4 px-14 md:px-16 rounded-tl-xl rounded-br-xl text-[14px] md:text-[18px] font-semibold"
-          >
-            My Resume
-          </button>
-        </Link>
+
+        <button
+          onClick={async (e) => {
+            e.preventDefault();
+            const response = await fetch("/MyResume.pdf");
+            const blob = await response.blob();
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "/MyResume.pdf";
+            a.click();
+          }}
+          className="bg-slate-100 text-red hover:bg-slate-300 p-2 md:p-4 px-14 md:px-16 rounded-tl-xl rounded-br-xl text-[14px] md:text-[18px] font-semibold"
+        >
+          My Resume
+        </button>
       </div>
     </div>
     // </div>
