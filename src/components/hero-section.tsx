@@ -39,16 +39,16 @@ export default function HeroSection({ setModal, modal }: PopupProps) {
         >
           Contact me
         </button>
-        <button
-          onClick={(e) => {
-            e.preventDefault();
-          }}
-          className="bg-slate-100 text-red hover:bg-slate-300 p-2 md:p-4 px-14 md:px-16 rounded-tl-xl rounded-br-xl text-[14px] md:text-[18px] font-semibold"
-        >
-          <Link rel="noopener noreferrer" target="_blank" href="/My Resume.pdf">
+        <Link rel="noopener noreferrer" target="_blank" href="./MyResume.pdf">
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+            }}
+            className="bg-slate-100 text-red hover:bg-slate-300 p-2 md:p-4 px-14 md:px-16 rounded-tl-xl rounded-br-xl text-[14px] md:text-[18px] font-semibold"
+          >
             My Resume
-          </Link>
-        </button>
+          </button>
+        </Link>
       </div>
     </div>
     // </div>
