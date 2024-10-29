@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
 
@@ -31,12 +32,24 @@ export default function HeroSection({ setModal, modal }: PopupProps) {
         modern, responsive websites. I am constantly seeking new opportunities
         to improve my skills.
       </p>
-      <button
-        className="bg-red p-2 md:p-4 px-14 md:px-20 text-white hover:bg-red-light rounded-tr-xl rounded-bl-xl text-[14px] md:text-[18px]"
-        onClick={() => setModal(!modal)}
-      >
-        Contact me
-      </button>
+      <div className="flex flex-col md:flex-row gap-y-6 md:space-x-8">
+        <button
+          className="bg-red p-2 md:p-4 px-14 md:px-16 text-white hover:bg-red-light rounded-tr-xl rounded-bl-xl text-[14px] md:text-[18px] font-semibold"
+          onClick={() => setModal(!modal)}
+        >
+          Contact me
+        </button>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+          }}
+          className="bg-slate-100 text-red hover:bg-slate-300 p-2 md:p-4 px-14 md:px-16 rounded-tl-xl rounded-br-xl text-[14px] md:text-[18px] font-semibold"
+        >
+          <Link rel="noopener noreferrer" target="_blank" href="/My Resume.pdf">
+            My Resume
+          </Link>
+        </button>
+      </div>
     </div>
     // </div>
   );
