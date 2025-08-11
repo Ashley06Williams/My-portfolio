@@ -28,7 +28,7 @@ export default function FooterSection() {
           className="py-8"
           target="_blank"
         >
-          <img src="/linkedIn.svg" alt="" className="w-10" />
+          <img src="/linkedIn.svg" alt="icon" className="w-10" />
         </Link>
       </div>
     </div>

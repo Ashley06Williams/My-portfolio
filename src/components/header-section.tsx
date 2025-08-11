@@ -43,7 +43,15 @@ export default function HeaderSection() {
         >
           CODEDBY<span className="text-red">ASH</span>
         </a>
-        <div className="MOBILE-MENU block md:hidden">
+        <div className="MOBILE-MENU flex items-center gap-2 md:hidden">
+          <a
+            href="https://renderme.co.za/resume/fgYoJh9jBqalZGZpHmtpsYDgQg73"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white font-semibold transition-colors duration-200 px-2 py-1 text-[14px] rounded-lg hover:text-red"
+          >
+            View my CV
+          </a>
           {!navOpen ? (
             <button
               onClick={() => setNavOpen(true)}
@@ -68,6 +76,16 @@ export default function HeaderSection() {
                 <NavLink href={menuItem.slug} title={menuItem.name} />
               </li>
             ))}
+            <li className="flex justify-center items-center w-full bg-red rounded-2xl px-2 ml-6">
+              <a
+                href="https://renderme.co.za/resume/fgYoJh9jBqalZGZpHmtpsYDgQg73"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white font-semibold transition-colors duration-200 px-3 py-2"
+              >
+                View my CV
+              </a>
+            </li>
           </ul>
         </div>
       </div>
