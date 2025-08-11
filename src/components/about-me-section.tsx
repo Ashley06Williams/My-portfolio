@@ -7,7 +7,7 @@ export default function AboutMe() {
       className="section-spacing md:mt-32 p-4 md:p-0 scroll-mt-32"
     >
       <div className=" ">
-        <div className="flex flex-col md:flex-row md:flex-1 flex-wrap md:flex-nowrap md:justify-between  md:space-x-40">
+        <div className="flex flex-col md:flex-row md:flex-1 flex-wrap md:flex-nowrap md:justify-between items-center  md:space-x-40">
           <div>
             <h3 className="text-white text-[15px] md:text-[18px] ">
               It&apos;s great to virtually meet you!
@@ -20,21 +20,16 @@ export default function AboutMe() {
 
           <div className="flex flex-col  gap-4 text-white text-[14px] md:text-[16px]">
             <p>
-              I jumped into programming with Java at school in 2022. While it
-              was tough at first, I got hooked on that feeling you get when you
-              finally crack a problem you&apos;ve been stuck on. Making it a
-              daily habit, even just for an hour, really helped me progress.
+              I'm a self-taught web developer with a passion for building custom applications using React and Next.js. I first started coding in high school with Java back in 2022, and while it was challenging at first, I quickly became hooked on the problem-solving process.
             </p>
             <p>
-              That initial spark led me into web development, where I started
-              with JavaScript, moved on to React, and now I&apos;m diving into
-              Next.js and keeping up with new tech.
+              That curiosity led me into web development, where I&apos;ve grown my skills in JavaScript, React, and modern frameworks like Next.js. Instead of just building small showcase projects, I wanted to create something meaningful—something I could use, improve, and build upon long-term.
             </p>
             <p>
-              As a self-taught developer, what I might lack in formal education
-              I make up for with genuine enthusiasm and a constant drive to
-              learn. Tech moves fast, and I&apos;m always ready to adapt and
-              grow with it.
+              That&apos;s how RenderMe was born: a web app that allows users to create and host their own CVs online. It&apos;s a project I&apos;m proud of and continue to develop as both a personal tool and a platform for others.
+            </p>
+            <p>
+              While I may not have a formal CS degree, I make up for it with consistency, curiosity, and a real passion for learning. I&apos;m focused on staying adaptable, growing with the tech landscape, and delivering work that brings real value.
             </p>
           </div>
         </div>
