@@ -22,12 +22,26 @@ const cardItems = [
       "JavaScript is the cornerstone of my programming journey. I first delved into coding through a Udemy BootCamp course, where I learned the fundamentals of programming. Since then, I’ve been actively building on that foundation, enhancing my skills in both front-end and back-end development.",
     id: 3,
   },
-  {
-    src: "/java-stroke-rounded.svg",
-    title: "Java",
+ {
+    src: "/java-script-stroke-rounded.svg",
+    title: "Tailwind CSS",
     description:
-      "I have been learning Java in school for the past two years, focusing on the basics and fundamentals of programming, with a particular emphasis on object-oriented programming. By studying two languages simultaneously, I've noticed that the core concepts of programming are quite similar. While I may not be highly skilled yet, I'm eager to enhance my abilities throughout my career and continuously learn as much as I can.",
+      "Tailwind CSS has transformed the way I approach styling in my projects. Its utility-first approach allows for rapid prototyping and a more efficient workflow. I've enjoyed learning how to create responsive designs with ease, and I'm excited to continue mastering this powerful framework.",
     id: 4,
+  },
+   {
+    src: "/java-script-stroke-rounded.svg",
+    title: "TypeScript",
+    description:
+      "TypeScript has been a game-changer in my development process. Its static typing and powerful tooling have greatly improved my productivity and code quality. I'm enjoying the process of gradually adopting TypeScript in my projects, and I'm excited to leverage its features to build more robust applications.",
+    id: 5,
+  },
+     {
+    src: "/java-script-stroke-rounded.svg",
+    title: "Firebase",
+    description:
+      "Firebase has been an essential part of my development toolkit. Its real-time database and authentication features have allowed me to build dynamic applications quickly. I'm particularly impressed with how Firebase integrates seamlessly with other technologies in my stack.",
+    id: 6,
   },
 ];
 
@@ -38,11 +52,11 @@ export default function AbilitySection() {
       <h1 className="font-semibold text-[60px] text-white -mt-2 mb-4">
         <span className="text-red">Tech</span>Stack
       </h1>
-      <div className="flex flex-col md:flex-row md:space-x-8 md:space-y-0 space-y-6 mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 ">
         {cardItems.map((cardItem) => (
           <div
             key={cardItem.id}
-            className="flex flex-col bg-blueGrey-light w-full md:w-[22%] h-auto  p-4 md:pt-10 shadow-md hover:shadow-xl"
+            className="flex flex-col bg-blueGrey-light h-auto  p-4 md:pt-10 shadow-md hover:shadow-xl rounded-2xl"
           >
             <img src={cardItem.src} className="w-8" alt="icon" />
             <h3 className="text-white font-semibold text-[16px] mt-6 mb-4">
