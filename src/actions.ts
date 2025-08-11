@@ -6,7 +6,7 @@ type State = {
   error: string | null;
   success: boolean;
 };
-export const sendEmail = async (prevStae: State, formData: FormData) => {
+export const sendEmail = async (prevState: State, formData: FormData) => {
   const name = formData.get("name") as string;
   const email = formData.get("email") as string;
   const message = formData.get("message") as string;
@@ -14,7 +14,7 @@ export const sendEmail = async (prevStae: State, formData: FormData) => {
     const resend = new Resend(process.env.RESEND_API_KEY);
     await resend.emails.send({
       from: "onboarding@resend.dev",
-      to: "ashley@waterfalldigital.co.za",
+      to: "codedbyash@gmail.com",
       subject: "Form Submission",
       react: EmailTemplate({ name, email, message }),
     });
@@ -24,7 +24,10 @@ export const sendEmail = async (prevStae: State, formData: FormData) => {
       success: true,
     };
   } catch (error) {
+    console.log(error);
+
     return {
+     
       error: (error as Error).message,
       success: false,
     };
