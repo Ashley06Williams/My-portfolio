@@ -15,7 +15,7 @@ const contactInfo = [
   },
   {
     id: 2,
-    info: "ashley@waterfalldigital.co.za",
+    info: "codedbyash@gmail.com",
     svg: "/emailIcon.svg",
   },
   {
