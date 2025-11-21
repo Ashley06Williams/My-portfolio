@@ -11,9 +11,9 @@ type PopupProps = {
 
 export default function HeroSection({ setModal, modal }: PopupProps) {
   return (
-    <div className="bg-blueGrey md:max-w-[1200px] mx-auto mt-44 md:mt-0 md:section-spacing h-[65vh] md:h-screen grid grid-cols-1 md:grid-cols-3  justify-center items-center p-5 text-center md:text-left ">
+    <div className="bg-[#F7F7F7] h-screen ">
       {/* <div className="max-w-[800px] "> */}
-      <div className="md:col-span-2 col-span-1">
+      <div className="">
       <p className="text-red text-[20px]  md:text-[30px] md:mb-[-10px]">Hello, I&apos;m</p>
       <TypeAnimation
         sequence={[
@@ -28,38 +28,9 @@ export default function HeroSection({ setModal, modal }: PopupProps) {
         repeat={1}
         className="text-white font-bold text-[32px] md:text-[40px] lg:text-[60px] leading-tight md:leading-normal"
       />
-      <p className="text-[12px] md:text-[18px] max-w-[600px] text-white mt-4 md:mt-0 mb-8 pr-2 md:pr-0">
-         A self-taught web developer with a passion for building custom applications currently using React and Next.JS
-      </p>
-      <div className="flex flex-col md:flex-row gap-y-6 md:space-x-8">
-        <button
-          className="bg-red  text-white hover:bg-red-light rounded-tr-xl rounded-bl-xl text-xl py-2 px-12"
-          onClick={() => setModal(!modal)}
-        >
-          Contact me
-        </button>
 
-        <button
-          onClick={async (e) => {
-            e.preventDefault();
-            const response = await fetch("/AshleyResume.pdf");
-            const blob = await response.blob();
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement("a");
-            a.href = url;
-            a.download = "/AshleyResume.pdf";
-            a.click();
-          }}
-          className="bg-slate-100 text-red hover:bg-slate-300 rounded-tl-xl rounded-br-xl    text-xl py-2 px-12"
-        >
-          My Resume
-        </button>
-      </div>
       </div>
 
-      <div >
-        <Image src="/ashley.png" alt="My Image" width={400} height={400} className="hidden md:block"/>
-      </div>
     </div>
 
     // </div>
