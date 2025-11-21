@@ -3,18 +3,18 @@
 import NavLink from "./navLinks";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
-
+import Image from "next/image";
 import React, { useState } from "react";
 
 const menuItems = [
   {
-    name: "Abilities",
-    slug: "#ability",
+    name: "Skills",
+    slug: "#skills",
     id: 2,
   },
   {
-    name: "Work",
-    slug: "#work",
+    name: "Portfolio",
+    slug: "#portfolio",
     id: 3,
   },
   {
@@ -34,14 +34,14 @@ export default function HeaderSection() {
   const [navOpen, setNavOpen] = useState(false);
 
   return (
-    <nav className="w-full fixed backdrop-blur-[11px] bg-blueGrey-dark bg-opacity-35 flex flex-wrap justify-center mx-auto pt-4 items-center pb-4 z-50 px-4 md:px-0">
-      <div className="max-w-[1200px] mx-auto flex items-center justify-between w-full">
+    <nav className="w-full fixed backdrop-blur-[11px] bg-blueGrey-dark  flex flex-wrap justify-center mx-auto py-8 items-center  z-50 px-4 md:px-0 ">
+      <div className="max-w-[1400px] mx-auto flex items-center justify-between w-full">
         <a
           href="/"
           onClick={handleHomeClick}
           className="text-white font-extrabold mr-8"
         >
-          CODEDBY<span className="text-red">ASH</span>
+          <Image src="/logo.svg" alt="Logo" width={140} height={140} /> 
         </a>
         <div className="MOBILE-MENU flex items-center gap-2 md:hidden">
           <a
@@ -69,21 +69,21 @@ export default function HeaderSection() {
           )}
         </div>
 
-        <div className="MENU hidden md:block space-x-4 md:space-x-6">
-          <ul className="flex flex-row p-4 sm:p-0">
+        <div className="MENU hidden md:block">
+          <ul className="flex flex-row p-4 sm:p-0 gap-10 font-normal text-xl">
             {menuItems.map((menuItem) => (
               <li key={menuItem.id}>
                 <NavLink href={menuItem.slug} title={menuItem.name} />
               </li>
             ))}
-            <li className="flex justify-center items-center w-full bg-red rounded-2xl px-2 ml-6">
+            <li className="flex justify-center items-center w-full rounded-full px-2 ml-4 border-2 border-red hover:bg-red transition-colors duration-200">
               <a
                 href="https://renderme.co.za/resume/fgYoJh9jBqalZGZpHmtpsYDgQg73"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white font-semibold transition-colors duration-200 px-3 py-2"
+                className="text-red font-normal px-3 py-1 hover:text-white  transition-colors duration-200"
               >
-                View my CV
+                RenderMe CV
               </a>
             </li>
           </ul>
