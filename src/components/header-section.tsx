@@ -3,7 +3,7 @@
 import NavLink from "./navLinks";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
-
+import Image from "next/image";
 import React, { useState } from "react";
 
 const menuItems = [
@@ -41,7 +41,7 @@ export default function HeaderSection() {
           onClick={handleHomeClick}
           className="text-white font-extrabold mr-8"
         >
-          CODEDBY<span className="text-red">ASH</span>
+          <Image src="/logo.svg" alt="Logo" width={140} height={140} /> 
         </a>
         <div className="MOBILE-MENU flex items-center gap-2 md:hidden">
           <a
