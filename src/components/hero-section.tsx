@@ -12,8 +12,8 @@ type PopupProps = {
 
 export default function HeroSection({ setModal, modal }: PopupProps) {
   return (
-    <div className="bg-[#F7F7F7] h-screen grid grid-cols-2 items-center ">
-      <div className="col-span-1">
+    <div className="relative bg-[#F7F7F7] h-[80vh] grid grid-cols-2 items-center overflow-hidden px-8 md:px-16">
+      <div className="col-span-1 z-10 max-w-2xl">
         
       <div className="flex items-center gap-4 bg-blueGrey-dark/90 w-fit px-8 py-2.5 rounded-full font-semibold text-white text-xl">
         <span className="w-2.5 h-2.5 bg-red rounded-full animate-pulse shadow-[0_0_8px_rgba(255,74,87,0.8)]"></span>
@@ -51,6 +51,17 @@ export default function HeroSection({ setModal, modal }: PopupProps) {
     <p className="relative z-10 pl-3 pr-4 group-hover:text-red group-hover:pl-4 group-hover:pr-3 transition-all duration-500 ease-in-out">View My Work</p>
   </button>
 </div>
+      </div>
+
+      {/* Profile Image positioned at bottom right - absolute positioning doesn't affect layout */}
+      <div className="absolute bottom-0 right-0 pointer-events-none">
+        <Image 
+          src="/ashleyresized.png" 
+          alt="Ashley Williams" 
+          width={800} 
+          height={800}
+          className="object-contain"
+        />
       </div>
 
     </div>
