@@ -5,10 +5,6 @@ import { TypeAnimation } from "react-type-animation";
 import Image from "next/image";
 import Link from "next/link";
 
-type PopupProps = {
-  modal: boolean;
-  setModal: React.Dispatch<React.SetStateAction<boolean>>;
-};
 
 export default function HeroSection() {
   return (
