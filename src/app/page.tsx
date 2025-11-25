@@ -12,7 +12,7 @@ import { useState } from "react";
 export default function Home() {
   const [modal, setModal] = useState(false);
   return (
-    <div className="bg-[#F7F7F7]">
+    <div className="bg-white">
       <header className="w-full flex justify-center items-start ">
         <HeaderSection />
       </header>
