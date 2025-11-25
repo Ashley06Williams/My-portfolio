@@ -17,7 +17,7 @@ export default function Home() {
         <HeaderSection />
       </header>
       <HeroSection />
-      <div className="h-full flex flex-col items-center  max-w-[1400px] lg:max-w-[2000px] mx-auto">
+      <div className="h-full flex flex-col items-center  max-w-[1400px]  mx-auto">
         <main className="mx-auto px-4 md:px-0">
           
           

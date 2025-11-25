@@ -14,7 +14,7 @@ export default function HeroSection() {
 
 
    
-    <div className="relative  h-[100vh] grid grid-cols-2 items-center overflow-hidden px-8 md:px-16 md:max-w-[1400px] lg:max-w-[2000px] mx-auto">
+    <div className="relative  h-[100vh] grid grid-cols-2 items-center overflow-hidden px-8 md:px-16 md:max-w-[1400px]  mx-auto">
 
 
 
@@ -66,8 +66,8 @@ export default function HeroSection() {
         <Image 
           src="/ashfinal.png" 
           alt="Ashley Williams" 
-          width={1200} 
-          height={1200}
+          width={1000} 
+          height={1000}
           className="object-contain"
         />
       </div>
