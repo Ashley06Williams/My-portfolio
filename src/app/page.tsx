@@ -12,12 +12,12 @@ import { useState } from "react";
 export default function Home() {
   const [modal, setModal] = useState(false);
   return (
-    <div className="">
+    <div className="bg-[#F7F7F7]">
       <header className="w-full flex justify-center items-start ">
         <HeaderSection />
       </header>
       <div className="h-full flex flex-col items-center ">
-        <main className="md:max-w-[1400px] mx-auto px-4 md:px-0">
+        <main className="mx-auto px-4 md:px-0">
           <HeroSection setModal={setModal} modal={modal} />
           <AbilitySection />
           <WorkSection />
