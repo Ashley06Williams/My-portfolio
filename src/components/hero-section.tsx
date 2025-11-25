@@ -3,66 +3,79 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import Image from "next/image";
+import Link from "next/link";
 
 type PopupProps = {
   modal: boolean;
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-export default function HeroSection({ setModal, modal }: PopupProps) {
+export default function HeroSection() {
   return (
-    <div className="bg-blueGrey md:max-w-[1200px] mx-auto mt-44 md:mt-0 md:section-spacing h-[65vh] md:h-screen grid grid-cols-1 md:grid-cols-3  justify-center items-center p-5 text-center md:text-left ">
-      {/* <div className="max-w-[800px] "> */}
-      <div className="md:col-span-2 col-span-1">
-      <p className="text-red text-[20px]  md:text-[30px] md:mb-[-10px]">Hello, I&apos;m</p>
-      <TypeAnimation
-        sequence={[
-          // Same substring at the start will only be typed out once, initially
-          "Ashley",
-          1000, // wait 1s before replacing "Mice" with "Hamsters"
-          "A Frontend Developer",
-          1000,
-        ]}
-        wrapper="span"
-        speed={25}
-        repeat={1}
-        className="text-white font-bold text-[32px] md:text-[40px] lg:text-[60px] leading-tight md:leading-normal"
-      />
-      <p className="text-[12px] md:text-[18px] max-w-[600px] text-white mt-4 md:mt-0 mb-8 pr-2 md:pr-0">
-         A self-taught web developer with a passion for building custom applications currently using React and Next.JS
-      </p>
-      <div className="flex flex-col md:flex-row gap-y-6 md:space-x-8">
-        <button
-          className="bg-red  text-white hover:bg-red-light rounded-tr-xl rounded-bl-xl text-xl py-2 px-12"
-          onClick={() => setModal(!modal)}
-        >
-          Contact me
-        </button>
+<div className="bg-white">
 
-        <button
-          onClick={async (e) => {
-            e.preventDefault();
-            const response = await fetch("/AshleyResume.pdf");
-            const blob = await response.blob();
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement("a");
-            a.href = url;
-            a.download = "/AshleyResume.pdf";
-            a.click();
-          }}
-          className="bg-slate-100 text-red hover:bg-slate-300 rounded-tl-xl rounded-br-xl    text-xl py-2 px-12"
-        >
-          My Resume
-        </button>
-      </div>
-      </div>
 
-      <div >
-        <Image src="/ashley.png" alt="My Image" width={400} height={400} className="hidden md:block"/>
+
+
+   
+    <div className="relative  h-[100vh] grid grid-cols-2 items-center overflow-hidden px-8 md:px-16 md:max-w-[1400px] lg:max-w-[2000px] mx-auto">
+
+
+
+      
+      <div className="col-span-1 z-10 max-w-2xl">
+        
+      <div className="flex items-center gap-4 bg-blueGrey-dark/90 w-fit px-8 py-2.5 rounded-full font-semibold text-white text-xl">
+        <span className="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(74,222,128,0.8)]"></span>
+        <p>Open To Work</p>
       </div>
+    <h2 className="mt-8 text-[50px] font-bold">
+      Front-End Developer 
+      <br />
+      Based in South Africa
+    </h2>
+<div className="mt-2">
+  <h1 className="text-[150px] font-bold">
+    <span className="text-red">ASH</span>
+    <TypeAnimation
+      sequence={[
+        "",
+        1000,
+        "LEY",
+        1000,
+      ]}
+      wrapper="span"
+      speed={50}
+
+      className="text-blueGrey-dark"
+    />
+  </h1>
+</div>
+<div className="mt-4">
+  <Link href="#portfolio">
+    <button className="relative flex items-center bg-red border-2 border-red text-white font-medium text-2xl group hover:bg-white p-1 rounded-full overflow-hidden">
+    <div className="relative z-10 bg-white rounded-full w-[50px] h-[50px] flex items-center justify-center">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8 text-red">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+      </svg>
     </div>
+    <p className="relative z-10 pl-3 pr-4 group-hover:text-red">View My Work</p>
+  </button>
+  </Link>
 
-    // </div>
+</div>
+      </div>
+
+      <div className="absolute bottom-0 right-0 pointer-events-none">
+        <Image 
+          src="/ashfinal.png" 
+          alt="Ashley Williams" 
+          width={1200} 
+          height={1200}
+          className="object-contain"
+        />
+      </div>
+</div>
+</div>
   );
 }
-
