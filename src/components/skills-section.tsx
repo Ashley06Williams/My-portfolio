@@ -60,7 +60,7 @@ const cardItems = [
     id: 7,
   },
   {
-    src: "/github.svg",
+    src: "/gitHub.svg",
     title: "GitHub",
     description:
       "A platform for version control, collaboration, and managing code through Git repositories.",
