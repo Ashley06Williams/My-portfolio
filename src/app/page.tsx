@@ -1,6 +1,6 @@
 "use client";
 
-import AbilitySection from "@/components/ability-section";
+import AbilitySection from "@/components/skills-section";
 import AboutMe from "@/components/about-me-section";
 import FormPage from "@/components/contact-section";
 import FooterSection from "@/components/FooterSection";
@@ -12,7 +12,7 @@ import { useState } from "react";
 export default function Home() {
   const [modal, setModal] = useState(false);
   return (
-    <div className="bg-blueGrey-light">
+    <div className="bg-[#1D202F]">
       <header className="w-full flex justify-center items-start ">
         <HeaderSection />
       </header>
