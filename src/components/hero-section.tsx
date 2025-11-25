@@ -46,13 +46,13 @@ export default function HeroSection({ setModal, modal }: PopupProps) {
   </h1>
 </div>
 <div className="mt-8">
-  <button className="relative flex items-center bg-red border-2 border-red hover:bg-white text-white font-medium text-2xl p-1 rounded-full overflow-hidden group transition-all duration-500 ease-in-out">
-    <div className="relative z-10 bg-white rounded-full w-[50px] h-[50px] flex items-center justify-center transition-all duration-500 ease-in-out group-hover:order-2 group-hover:ml-auto">
+  <button className="relative flex items-center bg-red border-2 border-red text-white font-medium text-2xl group hover:bg-white p-1 rounded-full overflow-hidden">
+    <div className="relative z-10 bg-white rounded-full w-[50px] h-[50px] flex items-center justify-center">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8 text-red">
         <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
       </svg>
     </div>
-    <p className="relative z-10 pl-3 pr-4 group-hover:text-red group-hover:pl-4 group-hover:pr-3 transition-all duration-500 ease-in-out">View My Work</p>
+    <p className="relative z-10 pl-3 pr-4 group-hover:text-red">View My Work</p>
   </button>
 </div>
       </div>

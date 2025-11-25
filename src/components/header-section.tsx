@@ -35,7 +35,7 @@ export default function HeaderSection() {
 
   return (
     <nav className="w-full fixed backdrop-blur-[11px] bg-blueGrey-dark  flex flex-wrap justify-center mx-auto py-8 items-center  z-50 px-4 md:px-0 ">
-      <div className="max-w-[1400px] mx-auto flex items-center justify-between w-full">
+      <div className="max-w-[1400px] lg:max-w-[2000px] mx-auto flex items-center justify-between w-full">
         <a
           href="/"
           onClick={handleHomeClick}
