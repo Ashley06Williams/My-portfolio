@@ -1,50 +1,82 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const cardItems = [
   {
-    src: "/react-stroke-rounded.svg",
+    src: "/react.svg",
     title: "React",
     description:
-      "React is a perfect fit for my journey. Its component-based design and fast Virtual DOM make it easy to build and scale dynamic projects. With React, I can focus on creating clean, reusable code blocks and responsive web design leveling up your skills as I progress in full-stack development.",
+      "A powerful UI library that makes building interactive, component-based interfaces fast and efficient.",
+    link: "https://react.dev/",
     id: 1,
   },
   {
-    src: "/nextJsIcon.svg",
-    title: "NextJs",
+    src: "/nextjs.svg",
+    title: "Next.js",
     description:
-      "Exploring Next.js has been an exciting experience! Working with server-side and client-side components is giving me a clear view of the performance benefits of server-side rendering. It's also pushing me to dive deeper into the Context API to manage and pass data across my app efficiently.",
+      "A React framework that offers server-side rendering, routing, and powerful full-stack capabilities.",
+    link: "https://nextjs.org/docs",
     id: 2,
   },
   {
-    src: "/java-script-stroke-rounded.svg",
+    src: "/javascript.svg",
     title: "JavaScript",
     description:
-      "JavaScript is the cornerstone of my programming journey. I first delved into coding through a Udemy BootCamp course, where I learned the fundamentals of programming. Since then, I’ve been actively building on that foundation, enhancing my skills in both front-end and back-end development.",
+      "The core language of the web, enabling dynamic behavior and powering both front-end and back-end development.",
+    link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     id: 3,
   },
- {
+  {
     src: "/tailwind.svg",
     title: "Tailwind CSS",
     description:
-      "Tailwind CSS has transformed the way I approach styling in my projects. Its utility-first approach allows for rapid prototyping and a more efficient workflow. I've enjoyed learning how to create responsive designs with ease, and I'm excited to continue mastering this powerful framework.",
+      "A utility-first CSS framework that makes styling fast, consistent, and responsive without writing custom CSS.",
+    link: "https://tailwindcss.com/docs",
     id: 4,
   },
-   {
+  {
     src: "/typescript.svg",
     title: "TypeScript",
     description:
-      "TypeScript has been a game-changer in my development process. Its static typing and powerful tooling have greatly improved my productivity and code quality. I'm enjoying the process of gradually adopting TypeScript in my projects, and I'm excited to leverage its features to build more robust applications.",
+      "A typed superset of JavaScript that improves code quality, developer productivity, and long-term maintainability.",
+    link: "https://www.typescriptlang.org/docs/",
     id: 5,
   },
-     {
+  {
     src: "/firebase.svg",
     title: "Firebase",
     description:
-      "Firebase has been an essential part of my development toolkit. Its real-time database and authentication features have allowed me to build dynamic applications quickly. I'm particularly impressed with how Firebase integrates seamlessly with other technologies in my stack.",
+      "A backend platform offering real-time databases, authentication, hosting, and full app infrastructure out of the box.",
+    link: "https://firebase.google.com/docs",
     id: 6,
   },
+  {
+    src: "/wordpress.svg",
+    title: "WordPress",
+    description:
+      "A flexible CMS for building websites quickly, offering themes, plugins, and intuitive content management.",
+    link: "https://wordpress.org/documentation/",
+    id: 7,
+  },
+  {
+    src: "/github.svg",
+    title: "GitHub",
+    description:
+      "A platform for version control, collaboration, and managing code through Git repositories.",
+    link: "https://docs.github.com/",
+    id: 8,
+  },
+  {
+    src: "/figma.svg",
+    title: "Figma",
+    description:
+      "A collaborative design tool used for UI/UX creation, prototyping, and streamlined team workflows.",
+    link: "https://help.figma.com/hc/en-us",
+    id: 9,
+  },
 ];
+
 
 export default function AbilitySection() {
   return (
@@ -53,22 +85,29 @@ export default function AbilitySection() {
       <h1 className="font-semibold text-8xl text-white mt-4 mb-14">
         <span className="text-red">Tech</span> Stack
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14 ">
         {cardItems.map((cardItem) => (
           <div
             key={cardItem.id}
-            className="relative"
+            className="relative h-full"
           >
             <div className="absolute -left-4 top-1/4 -translate-y-1/2 w-8 h-28 bg-red rounded-full z-0 shadow-[0_0_20px_rgba(255,74,87,0.3)]"></div>
-            <div className="flex flex-col bg-[#2B2D41] h-auto p-4 md:py-6 shadow-md hover:shadow-xl rounded-3xl text-left relative z-10">
+            <div className="flex flex-col bg-[#2B2D41] h-full p-4 md:p-8 shadow-md hover:shadow-xl rounded-3xl text-left relative z-10">
             
-              <div className="bg-[#474A69] w-fit p-5 rounded-full">
+            <div className="flex items-center justify-between">
+            <div className="bg-[#474A69] w-fit p-5 rounded-full">
                 <Image src={cardItem.src} width={54} height={54} alt="icon" />
               </div>
-              <h3 className="text-white font-semibold text-3xl mt-5 mb-5">
+
+              <Link href="#" className="text-red/80 font-light text-2xl pb-10">
+              learn more
+              </Link>
+            </div>
+             
+              <h3 className="text-white font-regular text-3xl mt-5 mb-5">
                 {cardItem.title}
               </h3>
-              <p className="text-white text-lg font-regular">
+              <p className="text-white/75 text-lg leading-loose">
                 {cardItem.description}
               </p>
             </div>
