@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const cardItems = [
@@ -47,24 +48,30 @@ const cardItems = [
 
 export default function AbilitySection() {
   return (
-    <div className="md:section-spacing  scroll-mt-32" id="skills">
-      <h3 className="text-white text-[16px]">My Abilities</h3>
-      <h1 className="font-semibold text-[60px] text-white -mt-2 mb-4">
-        <span className="text-red">Tech</span>Stack
+    <div className="md:section-spacing  scroll-mt-32 my-40 text-center" id="skills">
+      <h3 className="text-white text-3xl font-light">Take A Look At My Skills</h3>
+      <h1 className="font-semibold text-8xl text-white mt-4 mb-14">
+        <span className="text-red">Tech</span> Stack
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 ">
         {cardItems.map((cardItem) => (
           <div
             key={cardItem.id}
-            className="flex flex-col bg-blueGrey-light h-auto  p-4 md:pt-10 shadow-md hover:shadow-xl rounded-2xl"
+            className="relative"
           >
-            <img src={cardItem.src} className="w-9" alt="icon" />
-            <h3 className="text-white font-semibold text-lg mt-5 mb-5 ">
-              {cardItem.title}
-            </h3>
-            <p className="text-white font-light text-sm mb-4 ">
-              {cardItem.description}
-            </p>
+            <div className="absolute -left-4 top-1/4 -translate-y-1/2 w-8 h-28 bg-red rounded-full z-0 shadow-[0_0_20px_rgba(255,74,87,0.3)]"></div>
+            <div className="flex flex-col bg-[#2B2D41] h-auto p-4 md:py-6 shadow-md hover:shadow-xl rounded-3xl text-left relative z-10">
+            
+              <div className="bg-[#474A69] w-fit p-5 rounded-full">
+                <Image src={cardItem.src} width={54} height={54} alt="icon" />
+              </div>
+              <h3 className="text-white font-semibold text-3xl mt-5 mb-5">
+                {cardItem.title}
+              </h3>
+              <p className="text-white text-lg font-regular">
+                {cardItem.description}
+              </p>
+            </div>
           </div>
         ))}
       </div>
