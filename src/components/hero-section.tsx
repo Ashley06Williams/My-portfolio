@@ -3,16 +3,22 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import Image from "next/image";
-import { once } from "events";
+import Link from "next/link";
 
 type PopupProps = {
   modal: boolean;
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-export default function HeroSection({ setModal, modal }: PopupProps) {
+export default function HeroSection() {
   return (
-    <div className="relative bg-white h-[100vh] grid grid-cols-2 items-center overflow-hidden px-8 md:px-16 md:max-w-[1400px] lg:max-w-[2000px] mx-auto">
+<div className="bg-white">
+
+
+
+
+   
+    <div className="relative  h-[100vh] grid grid-cols-2 items-center overflow-hidden px-8 md:px-16 md:max-w-[1400px] lg:max-w-[2000px] mx-auto">
 
 
 
@@ -23,13 +29,13 @@ export default function HeroSection({ setModal, modal }: PopupProps) {
         <span className="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(74,222,128,0.8)]"></span>
         <p>Open To Work</p>
       </div>
-    <h2 className="mt-8 text-[40px] font-bold">
+    <h2 className="mt-8 text-[50px] font-bold">
       Front-End Developer 
       <br />
       Based in South Africa
     </h2>
-<div className="mt-8">
-  <h1 className="text-9xl font-bold">
+<div className="mt-2">
+  <h1 className="text-[150px] font-bold">
     <span className="text-red">ASH</span>
     <TypeAnimation
       sequence={[
@@ -45,8 +51,9 @@ export default function HeroSection({ setModal, modal }: PopupProps) {
     />
   </h1>
 </div>
-<div className="mt-8">
-  <button className="relative flex items-center bg-red border-2 border-red text-white font-medium text-2xl group hover:bg-white p-1 rounded-full overflow-hidden">
+<div className="mt-4">
+  <Link href="#portfolio">
+    <button className="relative flex items-center bg-red border-2 border-red text-white font-medium text-2xl group hover:bg-white p-1 rounded-full overflow-hidden">
     <div className="relative z-10 bg-white rounded-full w-[50px] h-[50px] flex items-center justify-center">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8 text-red">
         <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -54,11 +61,12 @@ export default function HeroSection({ setModal, modal }: PopupProps) {
     </div>
     <p className="relative z-10 pl-3 pr-4 group-hover:text-red">View My Work</p>
   </button>
+  </Link>
+
 </div>
       </div>
 
-      {/* Profile Image positioned at bottom right - absolute positioning doesn't affect layout */}
-      <div className="absolute bottom-0 right-[-100px] pointer-events-none">
+      <div className="absolute bottom-0 right-0 pointer-events-none">
         <Image 
           src="/ashfinal.png" 
           alt="Ashley Williams" 
@@ -68,20 +76,6 @@ export default function HeroSection({ setModal, modal }: PopupProps) {
         />
       </div>
 </div>
-    // </div>
+</div>
   );
 }
-
-      {/* <TypeAnimation
-        sequence={[
-          // Same substring at the start will only be typed out once, initially
-          "Ashley",
-          1000, // wait 1s before replacing "Mice" with "Hamsters"
-          "A Frontend Developer",
-          1000,
-        ]}
-        wrapper="span"
-        speed={25}
-        repeat={1}
-        className="text-white font-bold text-[32px] md:text-[40px] lg:text-[60px] leading-tight md:leading-normal"
-      /> */}
