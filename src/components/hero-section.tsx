@@ -25,13 +25,13 @@ export default function HeroSection() {
         <span className="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(74,222,128,0.8)]"></span>
         <p>Open To Work</p>
       </div>
-    <h2 className="mt-8 text-[50px] font-bold">
+    <h2 className="mt-8 text-[40px] font-bold">
       Front-End Developer 
       <br />
       Based in South Africa
     </h2>
 <div className="mt-2">
-  <h1 className="text-[150px] font-bold">
+  <h1 className="text-[125px] font-bold">
     <span className="text-red">ASH</span>
     <TypeAnimation
       sequence={[
