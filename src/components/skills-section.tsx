@@ -99,9 +99,9 @@ export default function AbilitySection() {
                 <Image src={cardItem.src} width={54} height={54} alt="icon" />
               </div>
 
-              <Link href="#" className="text-red/80 font-light text-2xl pb-10">
+              {/* <Link href="#" className="text-red/80 font-light text-2xl pb-10">
               learn more
-              </Link>
+              </Link> */}
             </div>
              
               <h3 className="text-white font-regular text-3xl mt-5 mb-5">
