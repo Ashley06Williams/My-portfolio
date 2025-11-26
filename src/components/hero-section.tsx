@@ -64,7 +64,7 @@ export default function HeroSection() {
 
       <div className="absolute bottom-0 right-0 pointer-events-none">
         <Image 
-          src="/ashfinal.png" 
+          src="/ashers1.jpeg" 
           alt="Ashley Williams" 
           width={1000} 
           height={1000}
