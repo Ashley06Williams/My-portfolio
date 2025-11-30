@@ -15,7 +15,7 @@ const workItem = [
     title: "RenderMe",
     workLink: "https://renderme.co.za/",
     paragraph:
-      "RenderMe is a modern resume builder built using Next.js, React, TypeScript, TailwindCSS, and Firebase, designed for creating and publishing digital CVs.",
+      "A digital CV builder that lets users create and publish their own online resumes.",
     id: 1,
   },
   {
@@ -23,20 +23,43 @@ const workItem = [
     title: "Mortgage Calculator",
     workLink: "https://mortgage-calc-chi.vercel.app/",
     paragraph:
-      "A clean, responsive mortgage calculator built with Next.js to practice modern styling and frontend development, allowing users to quickly calculate loan repayments.",
+      "A simple, intuitive calculator that helps users estimate monthly home loan payments instantly.",
     id: 2,
   },
     {
     imgSrc: "/mortgage.png",
-    title: "Mortgage Calculator",
+    title: "CodedByAsh Portfolio",
     workLink: "https://mortgage-calc-chi.vercel.app/",
     paragraph:
-      "A personal portfolio website built with Next.js, React, TypeScript, and TailwindCSS to showcase my projects, skills, and experience.",
+      "A personal portfolio showcasing my projects, skills, and growth as a front-end developer.",
     id: 3,
   },
 ];
 
 export default function WorkSection() {
+  const sleep = (ms: number) => new Promise((res) => setTimeout(res, ms));
+
+  async function startSiteTour() {
+    if (typeof window === "undefined") return
+
+    // Scroll to top first
+    window.scrollTo({ top: 0, behavior: "smooth" })
+    await sleep(700)
+
+    // Collect sections with an id in DOM order and scroll through them
+    const sections = Array.from(document.querySelectorAll<HTMLElement>("section[id]"))
+
+    for (const sec of sections) {
+      try {
+        sec.scrollIntoView({ behavior: "smooth", block: "start" })
+      } catch (e) {
+        window.scrollTo({ top: sec.offsetTop, behavior: "smooth" })
+      }
+      // wait for the smooth scroll to progress before moving to next
+      await sleep(1200)
+    }
+  }
+
   return (
     <section id="portfolio" className=" scroll-mt-32 section-spacing bg-white rounded-[60px] p-10">
       <div className="text-center">
@@ -59,7 +82,7 @@ export default function WorkSection() {
                 href={item.workLink}
                 className="group block h-full"
               >
-                <div className="group bg-blueGrey-light hover:shadow-2xl shadow-md  rounded-3xl transition-shadow duration-300 h-full flex flex-col">
+                <div className="group bg-blueGrey-light shadow-md rounded-3xl h-full flex flex-col">
                   <div className="flex items-center justify-center mb-4 px-2 pt-2">
                     <img src={item.imgSrc} alt={item.title} className="rounded-3xl " />
                   </div>
