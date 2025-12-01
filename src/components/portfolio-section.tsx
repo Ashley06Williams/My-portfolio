@@ -76,7 +76,16 @@ export default function WorkSection() {
                     <div className="flex-1 px-4 mb-6">
                       <h3 className="text-white text-3xl mb-2">{item.title}</h3>
                       <p className="text-md font-thin text-white mb-4">{item.paragraph}</p>
-                      <button className="relative flex items-center bg-red border-2 border-red text-white  text-sm group group-hover:bg-white p-1 rounded-full overflow-hidden">
+                      {
+                        item.id !== 3 ? <button className="relative flex items-center bg-red border-2 border-red text-white  text-sm group group-hover:bg-white p-1 rounded-full overflow-hidden">
+                        <div className="relative z-10 bg-white rounded-full w-[28px] h-[28px] flex items-center justify-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-red">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                          </svg>
+                        </div>
+                        <p className="relative z-10 pl-3 pr-4 group-hover:text-red">{item.button}</p>
+                      </button> :
+                      <button className="relative flex items-center bg-white border-2 border-red text-red  text-sm group p-1 rounded-full overflow-hidden">
                         <div className="relative z-10 bg-white rounded-full w-[28px] h-[28px] flex items-center justify-center">
                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-red">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -84,6 +93,7 @@ export default function WorkSection() {
                         </div>
                         <p className="relative z-10 pl-3 pr-4 group-hover:text-red">{item.button}</p>
                       </button>
+                      }
                     </div>
                   </div>
                 </Link>
