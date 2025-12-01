@@ -6,7 +6,7 @@ import FormPage from "@/components/contact-section";
 import FooterSection from "@/components/FooterSection";
 import HeaderSection from "@/components/header-section";
 import HeroSection from "@/components/hero-section";
-import WorkSection from "@/components/work-section";
+import WorkSection from "@/components/portfolio-section";
 import { useState } from "react";
 
 export default function Home() {
