@@ -14,24 +14,24 @@ export default function HeroSection() {
 
 
    
-    <div className="relative  h-[100vh] grid grid-cols-2 items-center overflow-hidden px-8 md:px-16 md:max-w-[1400px]  mx-auto">
+    <div className="relative  h-[100vh] md:grid flex justify-center md:justify-start  md:grid-cols-2 items-center overflow-hidden px-8 md:px-16 md:max-w-[1400px]  md:mx-auto">
 
 
 
       
-      <div className="col-span-1 z-10 max-w-2xl">
+      <div className="col-span-1 z-10 md:max-w-2xl">
         
-      <div className="flex items-center gap-4 bg-blueGrey-dark/90 w-fit px-8 py-2.5 rounded-full font-semibold text-white text-xl">
+      <div className="flex items-center gap-4 bg-blueGrey-dark/90 w-fit px-4 md:px-8 py-2 md:py-2.5 rounded-full font-semibold text-white text-xl">
         <span className="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(74,222,128,0.8)]"></span>
         <p>Open To Work</p>
       </div>
-    <h2 className="mt-8 text-[40px] font-bold">
+    <h2 className="mt-8  text-[20px] md:text-[40px] font-bold text-center md:text-left">
       Front-End Developer 
       <br />
       Based in South Africa
     </h2>
 <div className="mt-2">
-  <h1 className="text-[125px] font-bold">
+  <h1 className="text-[75px] md:text-[125px] font-bold">
     <span className="text-red">ASH</span>
     <TypeAnimation
       sequence={[
@@ -49,7 +49,7 @@ export default function HeroSection() {
 </div>
 <div className="mt-4">
   <Link href="#portfolio">
-    <button className="relative flex items-center bg-red border-2 border-red text-white font-medium text-2xl group hover:bg-white p-1 rounded-full overflow-hidden">
+    <button className="relative flex items-center bg-red border-2 border-red text-white font-medium text-xl md:text-2xl group hover:bg-white p-1 rounded-full overflow-hidden">
     <div className="relative z-10 bg-white rounded-full w-[50px] h-[50px] flex items-center justify-center">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8 text-red">
         <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -62,7 +62,7 @@ export default function HeroSection() {
 </div>
       </div>
 
-      <div className="absolute bottom-0 right-0 pointer-events-none">
+      <div className="hidden md:block absolute bottom-0 right-0 pointer-events-none">
         <Image 
           src="/ashers1.jpeg" 
           alt="Ashley Williams" 
