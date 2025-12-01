@@ -20,8 +20,6 @@ export default function Home() {
       <div className="h-full flex flex-col items-center  max-w-[1400px]  mx-auto">
         <main className="mx-auto px-4 md:px-0">
           
-          
-
           <AbilitySection />
           <WorkSection />
 
