@@ -17,7 +17,7 @@ export default function AboutMe() {
         <div className="w-full md:w-auto flex justify-center md:justify-end gap-8 mt-4 md:mt-0">
           <Link href="https://www.linkedin.com/in/ashley-williams-251693304/">
           <Image
-            src="/linkedin.svg"
+            src="linkedin.svg"
             alt="Ashley Williams"
             width={80}
             height={80}
@@ -28,7 +28,7 @@ export default function AboutMe() {
 
           <Link href="https://github.com/CodedByAsh">
           <Image
-            src="/github.svg"
+            src="gitHub.svg"
             alt="Ashley Williams"
             width={80}
             height={80}
