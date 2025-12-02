@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 import Popup from "./form-popup";
 
@@ -7,65 +8,80 @@ type PopupProps = {
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const contactInfo = [
-  {
-    id: 1,
-    info: "+27 (61) 549-4028",
-    svg: "/phoneIcon.svg",
-  },
-  {
-    id: 2,
-    info: "codedbyash@gmail.com",
-    svg: "/emailIcon.svg",
-  },
-  {
-    id: 3,
-    info: "Western Cape, South Africa",
-    svg: "/mapIcon.svg",
-  },
-];
-
 export default function FormPage({ modal, setModal }: PopupProps) {
   const toggleModal = () => {
     setModal(!modal);
   };
 
   return (
-    <section id="contact" className="scroll-mt-32 mb-12">
-      <div className="mt-40 flex flex-wrap md:flex-nowrap flex-col md:flex-row items-start justify-between">
-        {/* Left Column - Contact Info */}
-        <div className="flex flex-col w-full md:w-1/3 items-start justify-start md:justify-center">
-          <div>
-            <h3 className="text-white text-[14px] md:text-[18px] text-left">
-              Let&apos;s connect
-            </h3>
-            <h1 className="font-semibold text-[55px] md:text-[60px] text-white -mt-2 mb-4 text-left leading-tight md:leading-normal">
-              <span className="text-red mt-4">Contact</span> Me
-            </h1>
-          </div>
-
-          {contactInfo.map((data) => (
-            <div
-              key={data.id}
-              className="flex flex-row  w-[350px] md:w-[400px] bg-[#464C71] rounded-md text-white font-semibold mb-[30px] p-3 shadow-md hover:shadow-2xl"
-            >
-              <img src={data.svg} className="w-6 mr-4" alt="icon" />
-              <p>{data.info}</p>
-            </div>
-          ))}
+    <section id="contact" className="scroll-mt-32 mb-40 mt-40 flex flex-col items-center justify-center">
+      <div className="mb-10 flex items-center justify-center gap-4 md:gap-8">
+        {/* left-most (hidden on small screens) */}
+        <div className="hidden md:block transform -rotate-12 -translate-y-6">
+          <Image
+            src="/qambathi.png"
+            alt="Project placeholder 1"
+            width={180}
+            height={140}
+            className="rounded-xl shadow-xl bg-white object-cover"
+          />
         </div>
 
-        {/* Right Column - Button centered on medium screens */}
-        <div className="w-full md:w-2/3 flex md:items-center md:justify-center md:ml-auto md:mt-52">
-          <button
-            onClick={toggleModal}
-            className="bg-red text-white p-2 px-12 rounded-tr-xl rounded-bl-xl hover:bg-red-light mb-4 md:mb-0"
-          >
-            Message Me
-          </button>
+        <div className="transform -rotate-6 -translate-y-3">
+          <Image
+            src="/render.png"
+            alt="Project placeholder 2"
+            width={200}
+            height={150}
+            className="rounded-xl shadow-xl bg-white object-cover"
+          />
+        </div>
+
+        <div className="transform -translate-y-1">
+          <Image
+            src="/figmaash.png"
+            alt="Project placeholder 3"
+            width={240}
+            height={170}
+            className="rounded-xl shadow-xl bg-white object-cover"
+          />
+        </div>
+
+        <div className="transform rotate-12 translate-y-2 hidden md:block">
+          <Image
+            src="/mortagecal.png"
+            alt="Project placeholder 4"
+            width={200}
+            height={150}
+            className="rounded-xl shadow-xl bg-white object-cover"
+          />
+        </div>
+
+        <div className="hidden lg:block transform -rotate-6 -translate-y-3">
+          <Image
+            src="/almondvalley.png"
+            alt="Project placeholder 5"
+            width={180}
+            height={140}
+            className="rounded-xl shadow-xl bg-white object-cover"
+          />
         </div>
       </div>
-      <Popup modal={modal} setModal={setModal} />
+
+      <h1 className="text-4xl font-semibold text-white"><span className="text-red">Ready</span> to grow,<span className="text-red"> Ready</span> to learn</h1>
+      <p className="text-white text-center max-w-2xl mt-5 text-xl">If you know someone who&apos;s looking for a motivated junior developer, or if you&apos;re hiring yourself, I&apos;d be excited to chat.</p>
+          <button onClick={toggleModal} className="relative flex items-center bg-red border-2 border-red text-white font-medium mt-8 text-md md:text-xl group hover:bg-white p-1 rounded-full overflow-hidden">
+    <div className="relative z-10 bg-white rounded-full w-[40px] h-[40px] md:w-[40px] md:h-[40px] flex items-center justify-center">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-6 w-6 md:w-8 md:h-8 text-red">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+      </svg>
+    </div>
+    <p className="relative z-10 pl-3 pr-4 group-hover:text-red">Let&apos;s Get in Touch</p>
+  </button>
+
+  <Popup modal={modal} setModal={setModal} />
     </section>
   );
 }
+
+
