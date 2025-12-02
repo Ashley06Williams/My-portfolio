@@ -15,25 +15,24 @@ export default function AboutMe() {
         </div>
 
         <div className="w-full md:w-auto flex justify-center md:justify-end gap-8 mt-4 md:mt-0">
-          <Link href="https://www.linkedin.com/in/ashley-williams-251693304/">
-          <Image
-            src="linkedIn.svg"
-            alt="Ashley Williams"
-            width={80}
-            height={80}
-            className="object-contain"
-            
-          />
+          <Link href="https://www.linkedin.com/in/ashley-williams-251693304/" target="_blank" rel="noopener noreferrer" aria-label="Open Ashley's LinkedIn in new tab">
+            <Image
+              src="linkedIn.svg"
+              alt="Ashley Williams"
+              width={80}
+              height={80}
+              className="object-contain"
+            />
           </Link>
 
-          <Link href="https://github.com/CodedByAsh">
-          <Image
-            src="gitHub.svg"
-            alt="Ashley Williams"
-            width={80}
-            height={80}
-            className="object-contain"
-          />
+          <Link href="https://github.com/CodedByAsh" target="_blank" rel="noopener noreferrer" aria-label="Open Ashley's GitHub in new tab">
+            <Image
+              src="gitHub.svg"
+              alt="Ashley Williams"
+              width={80}
+              height={80}
+              className="object-contain "
+            />
           </Link>
         </div>
       </div>
@@ -48,17 +47,17 @@ export default function AboutMe() {
         
         {/* Three rectangular badges */}
         <div className="mt-12 flex flex-col md:flex-row items-center md:justify-center ">
-          <div className="w-full md:w-auto flex justify-center">
-            <span className="inline-block px-6 py-3 border-2 border-red text-red  uppercase text-md font-semibold rounded-l-xl">Powered by the love for dev</span>
-          </div>
+            <div className="w-full md:w-80 flex justify-center">
+              <span className="inline-block w-full text-center px-4 py-3 border-2 border-red text-red uppercase text-sm md:text-base font-semibold rounded-l-xl">Powered by the love for dev</span>
+            </div>
 
-          <div className="w-full md:w-auto flex justify-center">
-            <span className="inline-block px-6 py-3 bg-red text-white  uppercase text-md font-semibold border-2 border-red">Curiosity level: Unmeasurable</span>
-          </div>
+            <div className="w-full md:w-80 flex justify-center">
+              <span className="inline-block w-full text-center px-4 py-3 bg-red text-white uppercase text-sm md:text-base font-semibold border-2 border-red ">Curiosity level: Unmeasurable</span>
+            </div>
 
-          <div className="w-full md:w-auto flex justify-center">
-            <span className="inline-block px-6 py-3 border-2 border-red text-red  uppercase text-md font-semibold rounded-r-xl">Certified tech addict</span>
-          </div>
+            <div className="w-full md:w-80 flex justify-center">
+              <span className="inline-block w-full text-center px-4 py-3 border-2 border-red text-red uppercase text-sm md:text-base font-semibold rounded-r-xl">Certified tech addict</span>
+            </div>
         </div>
     </section>
   );
