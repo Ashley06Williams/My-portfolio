@@ -29,7 +29,7 @@ export default function HeroSection() {
 
 
    
-    <div className="relative h-[100vh] flex flex-col md:grid md:grid-cols-2 md:items-center md:justify-start items-center justify-center overflow-hidden px-8 md:px-16 md:max-w-[1400px] mx-auto">
+    <div className="relative h-[100vh] flex flex-col md:grid md:grid-cols-2 md:items-center md:justify-start items-center justify-center overflow-hidden px-8 md:px-16 md:max-w-[1200px] xl:max-w-[1400px] mx-auto">
 
 
 
