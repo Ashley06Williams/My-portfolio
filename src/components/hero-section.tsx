@@ -70,7 +70,7 @@ export default function HeroSection() {
     )}
   </h1>
 </div>
-<div className="mt-4">
+<div className="mt-4 mb-20 md:mb-0">
   <Link href="#portfolio">
     <button className="relative flex items-center bg-red border-2 border-red text-white font-medium text-md md:text-2xl group hover:bg-white p-1 rounded-full overflow-hidden">
     <div className="relative z-10 bg-white rounded-full w-[40px] h-[40px] md:w-[50px] md:h-[50px] flex items-center justify-center">
