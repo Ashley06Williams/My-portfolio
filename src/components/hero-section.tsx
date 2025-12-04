@@ -34,7 +34,7 @@ export default function HeroSection() {
 
 
       
-      <div className="col-span-1 z-10 md:max-w-2xl flex flex-col items-center md:items-start text-center md:text-left">
+      <div className="col-span-1 z-10 md:max-w-2xl flex flex-col items-center md:items-start text-center md:text-left mt-20 md:mt-0">
         {/* Mobile-only rounded headshot above content */}
         <div className="md:hidden flex justify-center mb-6 pr-4">
           <Image
