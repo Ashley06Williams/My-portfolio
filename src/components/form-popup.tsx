@@ -81,9 +81,9 @@ export default function Popup({ modal, setModal }: PopupProps) {
 
   return modal ? (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="fixed top-0 left-0 w-[100%] h-[100vh] bg-white bg-opacity-10 flex flex-wrap justify-center items-center ">
+      <div className="fixed top-0 left-0 w-[100%] h-[100vh] bg-white bg-opacity-10 flex flex-wrap justify-center items-center z-40">
         <div
-          className="relative p-[32px] w-[100%] max-w-[350px] md:max-w-[640px] bg-[#181A29] rounded-lg scroll-py-12 
+          className="relative p-[32px] w-[100%] max-w-[350px] md:max-w-[640px] bg-[#181A29] rounded-lg scroll-py-12 z-50
       "
         >
           <button
