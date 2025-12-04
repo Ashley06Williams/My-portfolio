@@ -80,11 +80,11 @@ const cardItems = [
 export default function AbilitySection() {
   return (
     <div className="md:section-spacing  scroll-mt-32 my-40 text-center" id="skills">
-      <h3 className="text-white text-3xl font-light">Take A Look At My Skills</h3>
-      <h1 className="font-semibold text-8xl text-white mt-4 mb-14">
+      <h3 className="text-white text-2xl font-light">Take A Look At My Skills</h3>
+      <h1 className="font-semibold text-6xl text-white mt-4 mb-14">
         <span className="text-red">Tech</span> Stack
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14 ">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-14 mx-6 md:mx-0">
         {cardItems.map((cardItem) => (
           <div
             key={cardItem.id}
