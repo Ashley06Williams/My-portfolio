@@ -23,7 +23,7 @@ export default function HeroSection() {
   }, [])
 
   return (
-<div className="bg-white">
+<div className="bg-white py-20 md:py-0">
 
 
 
